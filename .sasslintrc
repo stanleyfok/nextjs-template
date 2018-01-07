@@ -1,0 +1,11 @@
+files:
+  include:
+    - 'resources/styles/**/*.scss'
+  ignore:
+    - 'node_modules/**'
+
+rules:
+  indentation:
+    - 2
+    -
+      size: 2

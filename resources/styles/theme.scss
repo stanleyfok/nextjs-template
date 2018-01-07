@@ -1,0 +1,20 @@
+$bg-color: #f5f8fa;
+$nav-bg-color: #3097D1;
+$nav-text-color: #fff;
+$text-color: #212529;
+$link-color: #0ca984;
+$button-color: #0ca984;
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+}
+
+.btn-primary {
+  background-color: $button-color;
+  border-color: $button-color;
+}
