@@ -1,7 +1,14 @@
 Nextjs template
 =======
 
-[Nextjs](https://github.com/zeit/next.js) already provide a very easy way to use react to create a universal app. However, there are still much to setup if you want to put your app to a production environment. This project template is actually a simple universal webapp, compiled from my own web development experience and standard. Hope it will be helpful for anyone going to use nextjs.
+[Nextjs](https://github.com/zeit/next.js) already provide a very easy way to use react to create a universal app. However, there are still much to setup if you want to put your app to a production environment. I have spent some time myself to come up with a project template which is able to suit my business needs.
+
+This project template is actually a simple universal webapp with 2 screens. Hope it will be a useful example for those who are interested to build your next webapp with Nextjs
+
+## Background
+
+* CDN is provided, which can be used to cache javascript, css, images and other media files
+* Docker is used to deploy to qa and production environment
 
 ## Concept
 
@@ -43,17 +50,35 @@ render() {
 }
 ````
 
+## Configs
+
+This folder contains all the application configuration files.
+
+### /configs/config.js
+
+In a universal application, every files will be exposed to the frontend. You can actually define your config file like this, to contains all parameters under different environment:
+
+```js
+export default {
+  dev: { apiHost: 'http://localhost:3001/' },
+  staging: { apiHost: 'https://www.myinternalsite.com/' },
+  production: { apiHost: 'https://www.mysite.com/' },
+}
+```
+
+However, the problem is that this would leak internal information to the public, which maybe protentially a security issue. 
+
+To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during compile time. The variables which can be replaced during compiled time are defined at [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
+
+### /configs/routes.js
+
 ## Server Custom Routing
 
 ## CSS Handling
 
 ### Hot reload
 
-## Configs
 
-### Config file
-
-### Routes
 
 ## Custom Error Page
 
