@@ -16,7 +16,7 @@ npm run dev
 
 ## Design Philosophy
 
-### Rule: Need a clear layout structure
+### 💡 Rule: Need a clear layout structure
 
 Every page in the same project actually shares the same structure. I make good use of some Nextjs features and some custom components to organize the page:
 
@@ -52,11 +52,11 @@ render() {
 }
 ```
 
-### Rule: Error Page has to be customized
+### 💡 Rule: Error Page has to be customized
 
 Nextjs allow us to define our own error page. The custom error page is located at [/pages/_error.js](https://github.com/stanleyfok/nextjs-template/blob/master/pages/_error.js). It looks very similar to the normal pages as you can also define it's own Meta or Layout.
 
-### Rule: Config file cannot expose parameters from other environments
+### 💡 Rule: Config file cannot expose parameters from other environments
 
 In a universal application, every files will be exposed to the frontend. You can actually define your config file like this, to contains all parameters under different environment:
 
@@ -77,7 +77,7 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
  * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
  * [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
 
-### Rule: Routes pattern has to be SEO friendly
+### 💡 Rule: Routes pattern has to be SEO friendly
 
 [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/articles/123' for better SEO. The routing config file is just a simple object, having each row in the following format:
 
@@ -100,7 +100,7 @@ The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server
  * [configs/routes.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/routes.js)
  * [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js)
 
-### Rule: Hot Reload should be supported during development
+### 💡 Rule: Hot Reload should be supported during development
 
 to do
 
@@ -128,15 +128,15 @@ For scss, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
 npm run sasslint
 ```
 
-### Rule: Analyzer
+### 💡 Rule: Analyzer
 
 to do
 
-### Rule: Test Driven Development is encouraged
+### 💡 Rule: Test Driven Development is encouraged
 
 to do
 
-### Rule: Using Dockerfile for development and deployment strategy
+### 💡 Rule: Using Dockerfile for development and deployment strategy
 
 to add
 
