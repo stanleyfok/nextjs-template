@@ -15,8 +15,8 @@ export default class MyError extends Error {
     return [
       <Meta
         key="0"
-        title="Gumtree Jobs, Australia"
-        description="Access over 40,000 jobs across Australia with the new Gumtree Jobs app."
+        title="Error"
+        description="This is an error page"
       />,
       <Layout key="1">
         <p>
