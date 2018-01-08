@@ -14,7 +14,13 @@ To run this example, simply do:
 npm run dev
 ```
 
-## Design Philosophy
+## Design Philosophy - Practice
+
+### 💡 Rule: Hot Reload should be supported during development
+
+Hot Reload is important for frontend development as the changes can be reflected in a very quick manner. Hot reload feature is already supported by the latest version of Nextjs. Any changes on the source files would trigger rebuilding the application automatically.
+
+## Design Philosophy - Application Design
 
 ### 💡 Rule: Need a clear layout structure
 
@@ -56,27 +62,6 @@ render() {
 
 Nextjs allow us to define our own error page. The custom error page is located at [/pages/_error.js](https://github.com/stanleyfok/nextjs-template/blob/master/pages/_error.js). It looks very similar to the normal pages as you can also define it's own Meta or Layout.
 
-### 💡 Rule: Config file cannot expose parameters from other environments
-
-In a universal application, every files will be exposed to the frontend. You can actually define your config file like this, to contains all parameters under different environment:
-
-```js
-export default {
-  dev: { apiHost: 'http://localhost:3001/' },
-  staging: { apiHost: 'https://www.myinternalsite.com/' },
-  production: { apiHost: 'https://www.mysite.com/' },
-}
-```
-
-However, the problem is that this would leak internal information to the public, which maybe protentially a security issue. 
-
-To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during compile time. The variables which can be replaced during compiled time are defined at [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
-
-#### Related Files
-
- * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
- * [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
-
 ### 💡 Rule: Routes pattern has to be SEO friendly
 
 [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/articles/123' for better SEO. The routing config file is just a simple object, having each row in the following format:
@@ -99,14 +84,37 @@ The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server
 
  * [configs/routes.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/routes.js)
  * [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js)
+ 
+## Design Philosophy - JS
 
-### 💡 Rule: Hot Reload should be supported during development
+### 💡 Rule: Ensure imported modules are universal
 
-Hot Reload is important for frontend development as the changes can be reflected in a very quick manner. Hot reload feature is already supported by the latest version of Nextjs. Any changes on the source files would trigger rebuilding the application automatically.
+Not all javascript libraries can be run on both server and client side. When you pick a module to use, make sure it is universal
 
-### 💡 Rule: Need to leaverage CDN for CSS and JS
+### 💡 Rule: Config file cannot expose parameters from other environments
 
-to write after more testing
+In a universal application, every files will be exposed to the frontend. You can actually define your config file like this, to contains all parameters under different environment:
+
+```js
+export default {
+  dev: { apiHost: 'http://localhost:3001/' },
+  staging: { apiHost: 'https://www.myinternalsite.com/' },
+  production: { apiHost: 'https://www.mysite.com/' },
+}
+```
+
+However, the problem is that this would leak internal information to the public, which maybe protentially a security issue. 
+
+To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during compile time. The variables which can be replaced during compiled time are defined at [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
+
+#### Related Files
+
+ * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
+ * [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
+
+## Design Philosophy - CSS
+
+## Design Philosophy - Quality Control
 
 ### 💡 Rule: Code Linting is required
 
@@ -132,6 +140,16 @@ For scss, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
 npm run sasslint
 ```
 
+### 💡 Rule: Ensure every page can be loaded from server side and client side
+
+The great thing Nextjs provides to us is React with SSR, which means any page can be access from server side and client side. This also means you have to ensure your page can be entered from server side and client side.
+
+### 💡 Rule: Test Driven Development is encouraged
+
+to do
+
+## Design Philosophy - Optimization
+
 ### 💡 Rule: Analyzer
 
 It is always a good practice to run the (webpack-bundle-analyzer)[https://github.com/webpack-contrib/webpack-bundle-analyzer] to understand how to optimize your app. To learn some optimization skills on Nextjs, please refer to:
@@ -144,9 +162,11 @@ It is always a good practice to run the (webpack-bundle-analyzer)[https://github
 npm run analyze
 ```
 
-### 💡 Rule: Test Driven Development is encouraged
+### 💡 Rule: Need to leaverage CDN for CSS and JS
 
 to do
+
+## Design Philosophy - Deployment
 
 ### 💡 Rule: Using Dockerfile for development and deployment strategy
 
