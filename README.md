@@ -92,28 +92,25 @@ to do
 
 ## Code Quality
 
-Linter is in-corporate into this project template to enhance code quality
+Linters are added into this project template to enhance code quality:
 
-### JS
+#### JS
 
 For javascript, [eslint](https://eslint.org/) is used, extending rules from [airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base) and [react/recommended](https://github.com/yannickcr/eslint-plugin-react)
 
-To check js syntax:
 ```sh
+#To check js syntax
 npm run eslint
-```
 
-To try fixing js syntax:
-```sh
+#To try fixing js syntax
 npm run eslint-fix
 ```
 
-### CSS
+#### SCSS
 
-For css, [sass-lint](https://www.npmjs.com/package/sass-lint) is used
-
-To check js syntax:
+For css, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
 ```sh
+#To check scss syntax
 npm run sasslint
 ```
 
