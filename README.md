@@ -134,7 +134,15 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
  * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
  * [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
 
-## Design Philosophy - CSS and other medias
+## Design Philosophy - CSS and other media files
+
+### 💡 Rule: Use of SCSS
+
+SCSS is a powerful CSS syntax extension which makes our lives easier
+
+### 💡 Rule: Compile a global stylesheet
+
+Many people have been talking about using scoped CSS inside JSX
 
 ### 💡 Rule: Use new path for a new version of asset files
 
