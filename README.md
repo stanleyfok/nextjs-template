@@ -5,15 +5,6 @@ Nextjs template
 
 This project template is actually a simple universal webapp with 2 screens. Hope it will be a useful example for those who are interested to build your next webapp with Nextjs
 
-## Background
-
-* CDN is provided, which can be used to cache javascript, css, images and other media files
-* Docker is used to deploy to qa and production environment
-
-## Concept
-
-* babel, webpack, when?
-
 ## Page Structure
 
 Every page in the same project actually shares the same structure. I make good use of some Nextjs features and some custom components to organize the page:
@@ -49,6 +40,10 @@ render() {
   ];
 }
 ```
+
+#### Custom Error Page
+
+Nextjs allow us to define our own error page. The custom error page is located at /pages/_error.js. It looks very similar to the normal pages as you can also define it's own Meta or Layout.
 
 ## Config Files
 
@@ -90,8 +85,6 @@ The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server
 
 ### Hot reload
 
-## Custom Error Page
-
 ## Code Quality
 
 Linter is in-corporate into this project template to enhance code quality
@@ -103,3 +96,11 @@ For javascript, [eslint](https://eslint.org/) is used, extending rules from [air
 ### CSS
 
 For css, [sass-lint](https://www.npmjs.com/package/sass-lint) is used
+
+## Dockerfile
+
+to add
+
+## To do
+
+to do
