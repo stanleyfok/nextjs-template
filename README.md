@@ -52,7 +52,7 @@ Every page in the same project actually shares the same structure. I make good u
 
 #### pages/_document.js
 
-This is provided by the Nextjs framework. It defines root skeleton of any page. For example, it contains markup like <html>, <head>, <body>
+This is provided by the Nextjs framework. It defines root skeleton of any page. For example, it contains markup like `<html>`, `<head>`, `<body>`
 
 #### components/Layout.js
 
