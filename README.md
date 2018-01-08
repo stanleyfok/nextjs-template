@@ -88,7 +88,7 @@ Nextjs allow us to define our own error page. The custom error page is located a
 
 ### 💡 Rule: Routes pattern has to be SEO friendly
 
-[Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/articles/123' for better SEO. The routing config file is just a simple object, having each row in the following format:
+[Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/shows/418-the-batman' for better SEO. The routing config file is just a simple object, having each row in the following format:
 
 ```
 '[http method] [pattern]': '[actual nextjs page path]'
