@@ -140,9 +140,9 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
 
 SCSS is a powerful CSS syntax extension which makes our lives easier
 
-### 💡 Rule: Compile a global stylesheet
+### 💡 Rule: global stylesheet and styled-jsx
 
-Many people have been talking about using scoped CSS inside JSX
+still figuring out what is the right way to use them
 
 ### 💡 Rule: Use new path for a new version of asset files
 
