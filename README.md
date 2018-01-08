@@ -50,7 +50,7 @@ render() {
 }
 ```
 
-## Configs
+## Config Files
 
 This folder contains all the application configuration files.
 
@@ -72,13 +72,23 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
 
 #### /configs/routes.js
 
-## Server Custom Routing
+[Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/articles/123'. The routing config file is just a simple object, having each row in the following format:
+
+'[http method] [pattern]': '[actual nextjs page path]'
+
+This is how it actually looks in our example:
+```js
+module.exports = {
+  'GET /': '/index',
+  'GET /shows/:id': '/show',
+};
+```
+
+The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js) takes this routing file and tell Express engine how to response when seeing the http method and patterns.
 
 ## CSS Handling
 
 ### Hot reload
-
-
 
 ## Custom Error Page
 
