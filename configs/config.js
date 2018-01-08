@@ -1,8 +1,11 @@
 export default {
-  nodeEnv: '{nodeEnv}',
+  env: NODE_ENV,
   paths: {
-    static: '/static/{versionHash}',
-    styles: '/static/{versionHash}/styles',
-    images: '/static/{versionHash}/images',
+    static: `/static/${VERSION_HASH}`,
+    styles: `/static/${VERSION_HASH}/styles`,
+    images: `/static/${VERSION_HASH}/images`,
   },
+  api: {
+    baseURL: API_BASE_URL
+  }
 };

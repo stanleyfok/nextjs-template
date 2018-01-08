@@ -5,11 +5,12 @@ import Error from './_error';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 
+import config from '../configs/config';
 import ApiClient from '../lib/api-client';
 
 export default class Index extends React.Component {
   static async getInitialProps() {
-    const apiClient = new ApiClient('https://api.tvmaze.com');
+    const apiClient = new ApiClient(config.api.baseURL);
     const res = await apiClient.getShows('batman');
 
     return res;

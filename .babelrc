@@ -1,5 +1,11 @@
 {
+  "presets": [
+    "next/babel"
+  ],
   "plugins": [
+    [
+      "transform-define", "./global-config.js"
+    ],
     [
       "module-resolver", {
         "root": ["."],
@@ -9,14 +15,10 @@
         "cwd": "babelrc"
     }],
     [
-      "wrap-in-js",
-      {
+      "wrap-in-js", {
         "extensions": ["css$", "scss$"]
       }
     ]
-  ],
-  "presets": [
-    "next/babel"
   ],
   "ignore": []
 }

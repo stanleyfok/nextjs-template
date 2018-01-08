@@ -1,33 +1,17 @@
 const path = require('path');
 const glob = require('glob');
 const md5 = require('md5');
-const dotenv = require('dotenv');
 
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StringReplacePlugin = require('string-replace-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const analyze = process.env.ANALYZE;
-const nodeEnv = process.env.NODE_ENV || 'development';
 const pkg = require('./package.json');
 
+const analyze = process.env.ANALYZE;
+const nodeEnv = process.env.NODE_ENV || 'dev';
 const versionHash = md5(pkg.version);
-
-dotenv.config({ path: '.env' });
-
-// customize the rules based on what you want to configure
-const stringReplacePlugin = StringReplacePlugin.replace({
-  replacements: [
-    {
-      pattern: /\{versionHash\}/g, replacement: () => versionHash,
-    },
-    {
-      pattern: /\{nodeEnv\}/g, replacement: () => nodeEnv,
-    },
-  ],
-});
 
 module.exports = {
   // disabling file-system routing
@@ -43,12 +27,6 @@ module.exports = {
       }));
     }
 
-    // config file handling
-    config.module.rules.push({
-      test: /configs\/config\.js$/,
-      loader: stringReplacePlugin,
-    });
-
     // scss handling
     let scssLoaders = ['babel-loader', 'raw-loader', 'postcss-loader',
       { loader: stringReplacePlugin },
@@ -63,7 +41,7 @@ module.exports = {
       },
     ];
 
-    if (nodeEnv !== 'development') {
+    if (nodeEnv !== 'dev') {
       scssLoaders = ExtractTextPlugin.extract({
         use: scssLoaders,
       });
@@ -98,7 +76,6 @@ module.exports = {
         copyUnmodified: true,
       }),
       new ExtractTextPlugin(path.join(__dirname, 'static', versionHash, 'styles', 'bundle.css')),
-      new StringReplacePlugin(),
     );
 
     return config;

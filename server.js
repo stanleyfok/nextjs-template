@@ -1,11 +1,18 @@
 const express = require('express');
 const next = require('next');
+const dotenv = require('dotenv');
+const fs = require('fs');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const routes = require('./configs/routes');
+
+// load dotenv if file exists
+if (fs.existsSync('./.env')) {
+  dotenv.config();
+}
 
 app.prepare().then(() => {
   const server = express();

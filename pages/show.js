@@ -12,7 +12,7 @@ import ApiClient from '../lib/api-client';
 export default class Show extends React.Component {
   static async getInitialProps({ query }) {
     const { id } = query;
-    const apiClient = new ApiClient('https://api.tvmaze.com');
+    const apiClient = new ApiClient(config.api.baseURL);
     const res = await apiClient.getShow(id);
 
     return res;

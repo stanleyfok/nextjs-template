@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
           <link rel="shortcut icon" href={path.join(config.paths.images, 'favicon.png')} />
           {/* CSS Begin */}
-          {config.nodeEnv === 'development' ?
+          {config.env === 'dev' ?
             <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
             :
             <link rel="stylesheet" href={path.join(config.paths.styles, 'bundle.css')} />
