@@ -48,13 +48,13 @@ render() {
     </Layout>,
   ];
 }
-````
+```
 
 ## Configs
 
 This folder contains all the application configuration files.
 
-### /configs/config.js
+#### /configs/config.js
 
 In a universal application, every files will be exposed to the frontend. You can actually define your config file like this, to contains all parameters under different environment:
 
@@ -70,7 +70,7 @@ However, the problem is that this would leak internal information to the public,
 
 To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during compile time. The variables which can be replaced during compiled time are defined at [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
 
-### /configs/routes.js
+#### /configs/routes.js
 
 ## Server Custom Routing
 
