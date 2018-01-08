@@ -10,7 +10,9 @@ To run this example, simply do:
 npm run dev
 ```
 
-## Page Structure
+# Design Philosophy
+
+## Simple Page Structure
 
 Every page in the same project actually shares the same structure. I make good use of some Nextjs features and some custom components to organize the page:
 
@@ -46,15 +48,11 @@ render() {
 }
 ```
 
-#### Custom Error Page
+## Error Page has to be customized
 
-Nextjs allow us to define our own error page. The custom error page is located at /pages/_error.js. It looks very similar to the normal pages as you can also define it's own Meta or Layout.
+Nextjs allow us to define our own error page. The custom error page is located at [/pages/_error.js](https://github.com/stanleyfok/nextjs-template/blob/master/pages/_error.js). It looks very similar to the normal pages as you can also define it's own Meta or Layout.
 
-## Config Files
-
-This folder contains all the application configuration files.
-
-#### /configs/config.js
+## Config file cannot expose parameters from other environments
 
 In a universal application, every files will be exposed to the frontend. You can actually define your config file like this, to contains all parameters under different environment:
 
@@ -70,9 +68,14 @@ However, the problem is that this would leak internal information to the public,
 
 To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during compile time. The variables which can be replaced during compiled time are defined at [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
 
-#### /configs/routes.js
+#### related files
 
-[Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/articles/123'. The routing config file is just a simple object, having each row in the following format:
+ * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
+ * [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
+
+## Routes pattern has to be SEO friendly
+
+[Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/articles/123' for better SEO. The routing config file is just a simple object, having each row in the following format:
 
 ```
 '[http method] [pattern]': '[actual nextjs page path]'
@@ -88,11 +91,16 @@ module.exports = {
 
 The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js) takes this routing file and tell Express engine how to response when seeing the http method and patterns.
 
+#### related files
+
+ * [configs/routes.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/routes.js)
+ * [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js)
+
 ## CSS Handling
 
 to do
 
-## Code Quality
+## Code Linting is required
 
 Linters are added into this project template to enhance code quality:
 
@@ -120,11 +128,11 @@ npm run sasslint
 
 to do
 
-## Test Automation
+## Test Driven Development is encouraged
 
 to do
 
-## Dockerfile
+## Using Dockerfile for development and deployment strategy
 
 to add
 
