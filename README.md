@@ -3,7 +3,12 @@ Nextjs template
 
 [Nextjs](https://github.com/zeit/next.js) already provide a very easy way to use react to create a universal app. However, there are still much to setup if you want to put your app to a production environment. I have spent some time myself to come up with a project template which is able to suit my business needs.
 
-This project template is actually a simple universal webapp with 2 screens. Hope it will be a useful example for those who are interested to build your next webapp with Nextjs
+This project template is actually a simple universal webapp with 2 screens. Hope it will be a useful example for those who are interested to build your next webapp with Nextjs.
+
+To run this example, simply do:
+```sh
+npm run dev
+```
 
 ## Page Structure
 
@@ -83,7 +88,7 @@ The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server
 
 ## CSS Handling
 
-### Hot reload
+to do
 
 ## Code Quality
 
@@ -93,9 +98,32 @@ Linter is in-corporate into this project template to enhance code quality
 
 For javascript, [eslint](https://eslint.org/) is used, extending rules from [airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base) and [react/recommended](https://github.com/yannickcr/eslint-plugin-react)
 
+To check js syntax:
+```sh
+npm run eslint
+```
+
+To try fixing js syntax:
+```sh
+npm run eslint-fix
+```
+
 ### CSS
 
 For css, [sass-lint](https://www.npmjs.com/package/sass-lint) is used
+
+To check js syntax:
+```sh
+npm run sasslint
+```
+
+## Analyzer
+
+to do
+
+## Test Automation
+
+to do
 
 ## Dockerfile
 
