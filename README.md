@@ -72,7 +72,7 @@ However, the problem is that this would leak internal information to the public,
 
 To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during compile time. The variables which can be replaced during compiled time are defined at [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
 
-#### related files
+#### Related Files
 
  * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
  * [global-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/global-config.js)
@@ -95,16 +95,20 @@ module.exports = {
 
 The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js) takes this routing file and tell Express engine how to response when seeing the http method and patterns.
 
-#### related files
+#### Related Files
 
  * [configs/routes.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/routes.js)
  * [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js)
 
 ### 💡 Rule: Hot Reload should be supported during development
 
-to do
+Hot Reload is important for frontend development as the changes can be reflected in a very quick manner. Hot reload feature is already supported by the latest version of Nextjs. Any changes on the source files would trigger rebuilding the application automatically.
 
-### Code Linting is required
+### 💡 Rule: Need to leaverage CDN for CSS and JS
+
+to write after more testing
+
+### 💡 Rule: Code Linting is required
 
 Linters are added into this project template to enhance code quality:
 
@@ -130,7 +134,15 @@ npm run sasslint
 
 ### 💡 Rule: Analyzer
 
-to do
+It is always a good practice to run the (webpack-bundle-analyzer)[https://github.com/webpack-contrib/webpack-bundle-analyzer] to understand how to optimize your app. To learn some optimization skills on Nextjs, please refer to:
+
+* [Lazy Loading Modules](https://learnnextjs.com/excel/lazy-loading-modules)
+* [Lazy Loading Components](https://learnnextjs.com/excel/lazy-loading-components)
+
+```sh
+#To check scss syntax
+npm run analyze
+```
 
 ### 💡 Rule: Test Driven Development is encouraged
 
@@ -142,4 +154,4 @@ to add
 
 ## To do
 
-to do
+Not yet know
