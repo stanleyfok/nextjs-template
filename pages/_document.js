@@ -3,7 +3,7 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import path from 'path';
 import flush from 'styled-jsx/server';
 
-import stylesheet from '../resources/styles/bundle.scss';
+import stylesheet from '../assets/styles/bundle.scss';
 import config from '../configs/config';
 
 export default class MyDocument extends Document {

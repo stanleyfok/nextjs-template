@@ -65,10 +65,11 @@ module.exports = {
       new CleanWebpackPlugin([
         path.join(__dirname, 'static', versionHash),
       ]),
-      // resources copying
+      // assets copying
       new CopyWebpackPlugin([
+        // add more rules here if you have more folderes to copy
         {
-          from: path.join(__dirname, 'resources', 'images'),
+          from: path.join(__dirname, 'assets', 'images'),
           to: path.join(__dirname, 'static', versionHash, 'images'),
         },
       ], {
