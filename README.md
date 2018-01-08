@@ -14,11 +14,35 @@ To run this example, simply do:
 npm run dev
 ```
 
-## Design Philosophy - Practice
+## Design Philosophy - Dev Environment
 
 ### 💡 Rule: Hot Reload should be supported during development
 
 Hot Reload is important for frontend development as the changes can be reflected in a very quick manner. Hot reload feature is already supported by the latest version of Nextjs. Any changes on the source files would trigger rebuilding the application automatically.
+
+### 💡 Rule: Code Linting is required
+
+Linters are added into this project template to enhance code quality:
+
+#### JS
+
+For javascript, [eslint](https://eslint.org/) is used, extending rules from [airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base) and [react/recommended](https://github.com/yannickcr/eslint-plugin-react)
+
+```sh
+#To check js syntax
+npm run eslint
+
+#To try fixing js syntax
+npm run eslint-fix
+```
+
+#### SCSS
+
+For scss, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
+```sh
+#To check scss syntax
+npm run sasslint
+```
 
 ## Design Philosophy - Application Design
 
@@ -115,30 +139,6 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
 ## Design Philosophy - CSS
 
 ## Design Philosophy - Quality Control
-
-### 💡 Rule: Code Linting is required
-
-Linters are added into this project template to enhance code quality:
-
-#### JS
-
-For javascript, [eslint](https://eslint.org/) is used, extending rules from [airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base) and [react/recommended](https://github.com/yannickcr/eslint-plugin-react)
-
-```sh
-#To check js syntax
-npm run eslint
-
-#To try fixing js syntax
-npm run eslint-fix
-```
-
-#### SCSS
-
-For scss, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
-```sh
-#To check scss syntax
-npm run sasslint
-```
 
 ### 💡 Rule: Ensure every page can be loaded from server side and client side
 
