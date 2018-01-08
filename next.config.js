@@ -29,7 +29,6 @@ module.exports = {
 
     // scss handling
     let scssLoaders = ['babel-loader', 'raw-loader', 'postcss-loader',
-      { loader: stringReplacePlugin },
       {
         loader: 'sass-loader',
         options: {
