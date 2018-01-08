@@ -74,7 +74,9 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
 
 [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) are needed because we need to support dynamic routing like '/articles/123'. The routing config file is just a simple object, having each row in the following format:
 
+```
 '[http method] [pattern]': '[actual nextjs page path]'
+```
 
 This is how it actually looks in our example:
 ```js
