@@ -140,7 +140,7 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
 
 When using a CDN, a URL can be cached for a long period of time. Even you replace with a new content, the CDN will still serve the copy of the files stored in the CDN. The safest way is to have different file paths for different releases. 
 
-I have introduced 'version hash' to solve it, which is simply the md5 hash of the version number in package.json. A folder named by the version hash will be generated under the path '/static'. For example: 
+I have introduced 'version hash' to solve it, which is simply the md5 hash of the version number in package.json. A folder named by the version hash will be generated under the path `/static`. For example: 
 `/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png`
 
 If you have any new release, remember to bump the version number. You static files will then be placed in a new url.
