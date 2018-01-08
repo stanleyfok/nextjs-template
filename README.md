@@ -1,4 +1,4 @@
-Nextjs template
+Nextjs Template
 =======
 
 [Nextjs](https://github.com/zeit/next.js) already provide a very easy way to use react to create a universal app. However, there are still much to setup if you want to put your app to a production environment. I have spent some time myself to come up with a project template which is able to suit my business needs.
@@ -108,7 +108,7 @@ npm run eslint-fix
 
 #### SCSS
 
-For css, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
+For scss, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
 ```sh
 #To check scss syntax
 npm run sasslint
