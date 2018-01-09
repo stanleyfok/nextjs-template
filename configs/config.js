@@ -6,6 +6,6 @@ export default {
     images: `/static/${VERSION_HASH}/images`,
   },
   api: {
-    baseURL: API_BASE_URL
-  }
+    baseURL: API_BASE_URL,
+  },
 };
