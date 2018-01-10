@@ -7,7 +7,7 @@ const Meta = props => (
     {props.title ?
       <title>{props.title}</title> : ''
     }
-    { props.description ?
+    {props.description ?
       <meta name="description" content={props.description} /> : ''
     }
   </Head>

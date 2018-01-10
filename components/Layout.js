@@ -2,8 +2,8 @@ import React from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
+import Header from './Header';
+import Footer from './Footer';
 
 import config from '../configs/config';
 
