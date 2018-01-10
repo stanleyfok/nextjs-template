@@ -155,6 +155,12 @@ If you have any new release, remember to bump the version number. You static fil
 
 Also, do not check in any code under the static folder. Instead, please put your resources file under the `assets` folder. The webpack rules defined in [next.config.js](https://github.com/stanleyfok/nextjs-template/blob/master/next.config.js) will move your files to the static version hash folder.
 
+## Design Philosophy - User Experience
+
+### 💡 Rule: Need to show progress bar when navigating between pages
+
+If data is fetched from client side in getInitialProps(), the UI is freezed util API is fetched completely. Therefore, we have to ensure progress is shown when users click on any links.
+
 ## Design Philosophy - Quality Control
 
 ### 💡 Rule: Ensure every page can be loaded from server side and client side
