@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import path from 'path';
 
@@ -9,7 +10,7 @@ import Meta from '../components/Meta';
 import config from '../configs/config';
 import ApiClient from '../lib/api-client';
 
-export default class Show extends React.Component {
+class Show extends React.Component {
   static async getInitialProps({ query }) {
     const { id } = query;
     const apiClient = new ApiClient(config.api.baseURL);
@@ -54,3 +55,10 @@ export default class Show extends React.Component {
     ];
   }
 }
+
+Show.propTypes = {
+  statusCode: PropTypes.number,
+  data: PropTypes.object,
+};
+
+export default Show;

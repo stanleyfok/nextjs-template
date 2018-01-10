@@ -1,6 +1,16 @@
 import React from 'react';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+
 import Header from './Header';
 import Footer from './Footer';
+
+// progress bar
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 const Layout = props => [
   <Header key="0" />,

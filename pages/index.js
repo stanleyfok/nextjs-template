@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import Error from './_error';
@@ -8,7 +9,7 @@ import Meta from '../components/Meta';
 import config from '../configs/config';
 import ApiClient from '../lib/api-client';
 
-export default class Index extends React.Component {
+class Index extends React.Component {
   static async getInitialProps() {
     const apiClient = new ApiClient(config.api.baseURL);
     const res = await apiClient.getShows('batman');
@@ -31,13 +32,15 @@ export default class Index extends React.Component {
         <div className="index">
           <h1>Batman TV Programs</h1>
           <ul>
-            {
+            {this.props.data ?
               this.props.data.map(item =>
                 <li key={item.show.id}>
-                  <Link href={`/show?id=${item.show.id}`} as={`/shows/${item.show.id}`}>
+                  <Link prefetch href={`/show?id=${item.show.id}`} as={`/shows/${item.show.id}`}>
                     <a>{item.show.name} {item.show.rating.average ? `(${item.show.rating.average})` : ''}</a>
                   </Link>
                 </li>)
+              :
+              ''
             }
           </ul>
         </div>
@@ -45,3 +48,10 @@ export default class Index extends React.Component {
     ];
   }
 }
+
+Index.propTypes = {
+  statusCode: PropTypes.number,
+  data: PropTypes.array,
+};
+
+export default Index;
