@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Document /> should render correctly 1`] = `
+<html>
+  <Head>
+    <meta
+      content="initial-scale=1.0, width=device-width"
+      key="viewport"
+      name="viewport"
+    />
+    <link
+      href="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+      rel="shortcut icon"
+    />
+    <link
+      href="/static/47cd76e43f74bbc2e1baaf194d07e1fa/styles/bundle.css"
+      rel="stylesheet"
+    />
+  </Head>
+  <body>
+    <Main />
+    <NextScript />
+  </body>
+</html>
+`;

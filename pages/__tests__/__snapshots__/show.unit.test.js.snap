@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Show /> should render correctly with non-searchable result 1`] = `
+Array [
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  >
+    <p>
+      An error 404 occurred on server
+    </p>
+  </div>,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer here
+    </div>
+  </div>,
+]
+`;
+
+exports[`<Show /> should render correctly with searchable result 1`] = `
+Array [
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  >
+    <h1>
+      Batman
+    </h1>
+    <div
+      class="row"
+    >
+      <div
+        class="col-md-3"
+      >
+        <img
+          class="img-fluid"
+          src="http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg"
+        />
+      </div>
+      <div
+        class="col-md-9"
+      >
+        <div>
+          <p>
+            Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row text-center"
+    >
+      <div
+        class="col-md-12"
+      >
+        <a
+          class="btn btn-primary"
+          href="/"
+        >
+          Back
+        </a>
+      </div>
+    </div>
+  </div>,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer here
+    </div>
+  </div>,
+]
+`;

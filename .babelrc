@@ -1,7 +1,10 @@
 {
-  "presets": [
-    "next/babel"
-  ],
+  "env": {
+    "test": {
+      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]]
+    }
+  },
+  "presets": ["next/babel"],
   "plugins": [
     [
       "transform-define", "./global-config.js"

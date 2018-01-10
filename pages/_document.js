@@ -1,22 +1,11 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import path from 'path';
-import flush from 'styled-jsx/server';
 
 import stylesheet from '../assets/styles/bundle.scss';
 import config from '../configs/config';
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const {
-      html, head, errorHtml, chunks,
-    } = renderPage();
-    const styles = flush();
-    return {
-      html, head, errorHtml, chunks, styles,
-    };
-  }
-
   render() {
     return (
       <html>

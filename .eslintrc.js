@@ -1,6 +1,6 @@
 module.exports = {
   "env": {
-    "mocha": true
+    "jest": true
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -10,10 +10,12 @@ module.exports = {
   },
   "rules": {
     "indent": ["error", 2],
-    "class-methods-use-this": 0
+    "class-methods-use-this": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   },
   "plugins": [
-    "react"
+    "react",
+    "jest"
   ],
   "extends": [
     "airbnb-base",
