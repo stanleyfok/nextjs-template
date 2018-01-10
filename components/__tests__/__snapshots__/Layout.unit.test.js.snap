@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> renders correctly with no children 1`] = `
+Array [
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  />,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer
+    </div>
+  </div>,
+]
+`;
+
+exports[`<Layout /> renders correctly with some children 1`] = `
+Array [
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  >
+    <div>
+      Hello World 1
+    </div>
+    <p>
+      Hello World 2
+    </p>
+    <span>
+      Hello World 3
+    </span>
+  </div>,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer
+    </div>
+  </div>,
+]
+`;

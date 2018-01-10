@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Meta /> renders correctly with no properties 1`] = `<SideEffect(Head) />`;
+
+exports[`<Meta /> renders correctly with only description 1`] = `
+<SideEffect(Head)>
+  <meta
+    content="Page Description"
+    name="description"
+  />
+</SideEffect(Head)>
+`;
+
+exports[`<Meta /> renders correctly with only title 1`] = `
+<SideEffect(Head)>
+  <title>
+    Page Title
+  </title>
+</SideEffect(Head)>
+`;
