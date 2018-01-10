@@ -2,8 +2,10 @@ import React from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
-import Header from './Header';
+import Header from './Header/Header';
 import Footer from './Footer/Footer';
+
+import config from '../configs/config';
 
 // progress bar
 Router.onRouteChangeStart = () => {
@@ -13,7 +15,7 @@ Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
 const Layout = props => [
-  <Header key="0" />,
+  <Header key="0" imagePath={config.paths.images}/>,
   <div key="1" className="container">
     {props.children}
   </div>,
