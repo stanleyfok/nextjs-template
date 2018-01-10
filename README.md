@@ -169,7 +169,31 @@ The great thing Nextjs provides to us is React with SSR, which means any page ca
 
 ### 💡 Rule: Test Driven Development is encouraged
 
-to do
+### 💡 Rule: Separate unit tests and integration tests files
+
+Both unit test and integration tests are required
+
+#### unit tests
+
+Unit test is only about one component, it is better to put together with the component files, end with `.unit.test.js`. This also reminds the developer if any component has missing unit test
+
+```sh
+# to only run unit test
+npm run test-unit
+```
+
+### 💡 Rule: Using Jest and Enzyme for unit testing tools
+
+The library (enzyme)[https://www.npmjs.com/package/enzyme] and (enzyme-to-json)[https://www.npmjs.com/package/enzyme-to-json] are mainly used to write unit tests
+
+#### Integration tests
+
+Since int test involves more files, they are organized /tests/int folder, end with `.int.test.js`
+
+```sh
+# to only run int test
+npm run test-int
+```
 
 ## Design Philosophy - Optimization
 

@@ -10,7 +10,10 @@
     "eslint": "./node_modules/.bin/eslint '**/*.js'",
     "eslint-fix": "./node_modules/.bin/eslint --fix '**/*.js'",
     "sasslint": "./node_modules/.bin/sass-lint -v -q",
-    "cc": "rm -rf node_modules/.cache"
+    "cc": "rm -rf node_modules/.cache",
+    "test": "NODE_ENV=test jest",
+    "test-unit": "NODE_ENV=test jest unit",
+    "test-int": "NODE_ENV=test jest int"
   },
   "dependencies": {
     "autoprefixer": "^7.2.4",
@@ -42,12 +45,16 @@
     "webpack-bundle-analyzer": "^2.9.1"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.0",
     "eslint": "^4.14.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.6.1",
     "eslint-plugin-react": "^7.5.1",
-    "mocha": "^4.1.0",
+    "jest": "^22.0.5",
+    "react-addons-test-utils": "^15.6.2",
     "sass-lint": "^1.12.1"
   }
 }

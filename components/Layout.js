@@ -3,7 +3,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 
 import Header from './Header';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 
 // progress bar
 Router.onRouteChangeStart = () => {
