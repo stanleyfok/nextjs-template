@@ -2,6 +2,7 @@ import React from 'react';
 import path from 'path';
 import Link from 'next/link';
 
+import styles from './Header-styles'
 import config from '../configs/config';
 
 const Header = () => (
@@ -12,6 +13,7 @@ const Header = () => (
       </Link>
       <span>Batman TV Programs</span>
     </div>
+    <style jsx>{styles}</style>
   </div>
 );
 
