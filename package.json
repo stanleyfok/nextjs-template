@@ -13,7 +13,8 @@
     "cc": "rm -rf node_modules/.cache",
     "test": "NODE_ENV=test jest",
     "test-unit": "NODE_ENV=test jest unit",
-    "test-int": "NODE_ENV=test jest int"
+    "test-int": "NODE_ENV=test jest int",
+    "test-coverage": "NODE_ENV=test jest --coverage"
   },
   "dependencies": {
     "autoprefixer": "^7.2.4",
