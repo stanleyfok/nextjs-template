@@ -11,13 +11,11 @@ describe('<Layout />', () => {
   });
 
   it('renders correctly with some children', () => {
-    const layout = render(
-      <Layout>
-        <div>Hello World 1</div>
-        <p>Hello World 2</p>
-        <span>Hello World 3</span>
-      </Layout>
-    );
+    const layout = render(<Layout>
+      <div>Hello World 1</div>
+      <p>Hello World 2</p>
+      <span>Hello World 3</span>
+    </Layout>);
     expect(toJson(layout)).toMatchSnapshot();
   });
 });

@@ -7,7 +7,7 @@ exports[`<Footer /> renders correctly 1`] = `
   <div
     className="container"
   >
-    This is footer
+    This is footer here
   </div>
 </div>
 `;
