@@ -169,6 +169,8 @@ The great thing Nextjs provides to us is React with SSR, which means any page ca
 
 ### 💡 Rule: Test Driven Development is encouraged
 
+Need to write unit test for every modules or UI components
+
 ### 💡 Rule: Need a file structure favoring writing test cases
 
 This article says well how to manage the test files: http://www.tysoncadenhead.com/blog/where-should-i-put-javascript-unit-tests/
@@ -178,6 +180,12 @@ I take the approach having the __tests__ folder in each folder
 ### 💡 Rule: Using Jest and Enzyme for unit testing tools
 
 The library (enzyme)[https://www.npmjs.com/package/enzyme] and (enzyme-to-json)[https://www.npmjs.com/package/enzyme-to-json] are mainly used to write unit tests
+
+### 💡 Rule: API client library has to be mocked
+
+API client library has to be mocked so that unit testing is not related to the real api
+
+Reference: https://hackernoon.com/api-testing-with-jest-d1ab74005c0a
 
 ## Design Philosophy - Optimization
 
