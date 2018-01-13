@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Index /> renders correctly 1`] = `undefined`;
+exports[`<Index /> renders correctly 1`] = `
+Array [
+  <Meta
+    description="A comprehensive Nextjs template"
+    key="0"
+    title="Batman Shows | Nextjs Template"
+  />,
+  <Layout
+    key="1"
+  />,
+]
+`;
