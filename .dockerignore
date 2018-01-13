@@ -1,0 +1,21 @@
+# app related
+.next
+node_modules
+static
+.env
+
+# docker related
+Dockerfile
+docker-compose.yml
+
+# jest related
+__tests__
+__mocks__
+coverage
+
+# others
+.git
+*.md
+.tmp
+.log
+.log.*

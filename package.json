@@ -2,10 +2,15 @@
   "name": "nextjs-template",
   "version": "1.0.0",
   "description": "Nextjs project template",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stanleyfok/nextjs-template.git"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "prestart": "next build",
+    "start": "node server.js",
     "analyze": "ANALYZE=1 next build",
     "eslint": "./node_modules/.bin/eslint '**/*.js'",
     "eslint-fix": "./node_modules/.bin/eslint --fix '**/*.js'",
@@ -16,6 +21,8 @@
     "test-int": "NODE_ENV=test jest int",
     "test-coverage": "NODE_ENV=test jest --coverage"
   },
+  "author": "Stanley Fok <stanleyfok@gmail.com> (https://github.com/stanleyfok)",
+  "license": "MIT",
   "dependencies": {
     "autoprefixer": "^7.2.4",
     "babel-plugin-module-resolver": "^3.0.0",
@@ -56,7 +63,6 @@
     "eslint-plugin-react": "^7.5.1",
     "jest": "^22.0.5",
     "jest-css-modules": "^1.1.0",
-    "react-addons-test-utils": "^15.6.2",
     "sass-lint": "^1.12.1"
   }
 }
