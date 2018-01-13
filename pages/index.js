@@ -54,7 +54,7 @@ Index.propTypes = {
   data: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
-  ])
+  ]),
 };
 
 export default Index;

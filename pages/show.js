@@ -15,7 +15,7 @@ class Show extends React.Component {
     const { id } = query;
     const apiClient = new ApiClient(config.api.baseURL);
     const res = await apiClient.getShow(id);
-    
+
     return res;
   }
 
