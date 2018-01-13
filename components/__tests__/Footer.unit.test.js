@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import Footer from '../Footer';
 
 describe('<Footer />', () => {
-  it('renders correctly', () => {
+  it('should render correctly', () => {
     const footer = shallow(<Footer />);
     expect(toJson(footer)).toMatchSnapshot();
   });

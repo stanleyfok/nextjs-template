@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Error /> renders correctly with status code 1`] = `
+exports[`<Error /> should render correctly with status code 1`] = `
 Array [
   <div
     class="header"
@@ -39,7 +39,7 @@ Array [
 ]
 `;
 
-exports[`<Error /> renders correctly without status code 1`] = `
+exports[`<Error /> should render correctly without status code 1`] = `
 Array [
   <div
     class="header"

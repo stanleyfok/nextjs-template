@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> renders correctly with imagePath=/ 1`] = `
+exports[`<Header /> should render correctly with imagePath=/ 1`] = `
 <div
   className="header"
 >
@@ -24,7 +24,7 @@ exports[`<Header /> renders correctly with imagePath=/ 1`] = `
 </div>
 `;
 
-exports[`<Header /> renders correctly with imagePath=https://ssl-gumtree.classistatic.com/jobs/job-app/ 1`] = `
+exports[`<Header /> should render correctly with imagePath=https://ssl-gumtree.classistatic.com/jobs/job-app/ 1`] = `
 <div
   className="header"
 >

@@ -1,14 +1,155 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Index /> renders correctly 1`] = `
+exports[`<Index /> should render correctly with non-searchable result 1`] = `
 Array [
-  <Meta
-    description="A comprehensive Nextjs template"
-    key="0"
-    title="Batman Shows | Nextjs Template"
-  />,
-  <Layout
-    key="1"
-  />,
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  >
+    <p>
+      An error 404 occurred on server
+    </p>
+  </div>,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer here
+    </div>
+  </div>,
+]
+`;
+
+exports[`<Index /> should render correctly with searchable result 1`] = `
+Array [
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  >
+    <div
+      class="index"
+    >
+      <h1>
+        Batman TV Programs
+      </h1>
+      <ul>
+        <li>
+          <a
+            href="/shows/975"
+          >
+            Batman (8.2)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/481"
+          >
+            The Batman (8.3)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/504"
+          >
+            Batman Beyond (9)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/757"
+          >
+            Batman: The Animated Series (9.3)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/11464"
+          >
+            Batman Unlimited (10)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/3557"
+          >
+            Beware the Batman (10)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/33618"
+          >
+            The Adventures of Batman 
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/900"
+          >
+            Batman: The Brave and The Bold (9.4)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/5951"
+          >
+            The New Batman Adventures (8.6)
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shows/22309"
+          >
+            Batman: Black and White 
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer here
+    </div>
+  </div>,
 ]
 `;

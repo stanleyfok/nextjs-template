@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Document /> renders correctly 1`] = `
+exports[`<Document /> should render correctly 1`] = `
 <html>
   <Head>
     <meta

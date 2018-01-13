@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Layout /> renders correctly with no children 1`] = `
+exports[`<Layout /> should render correctly with no children 1`] = `
 Array [
   <div
     class="header"
@@ -35,7 +35,7 @@ Array [
 ]
 `;
 
-exports[`<Layout /> renders correctly with some children 1`] = `
+exports[`<Layout /> should render correctly with some children 1`] = `
 Array [
   <div
     class="header"

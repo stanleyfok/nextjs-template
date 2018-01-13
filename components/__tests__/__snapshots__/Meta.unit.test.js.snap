@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Meta /> renders correctly with no properties 1`] = `<SideEffect(Head) />`;
+exports[`<Meta /> should render correctly with no properties 1`] = `<SideEffect(Head) />`;
 
-exports[`<Meta /> renders correctly with only description 1`] = `
+exports[`<Meta /> should render correctly with only description 1`] = `
 <SideEffect(Head)>
   <meta
     content="Page Description"
@@ -11,7 +11,7 @@ exports[`<Meta /> renders correctly with only description 1`] = `
 </SideEffect(Head)>
 `;
 
-exports[`<Meta /> renders correctly with only title 1`] = `
+exports[`<Meta /> should render correctly with only title 1`] = `
 <SideEffect(Head)>
   <title>
     Page Title

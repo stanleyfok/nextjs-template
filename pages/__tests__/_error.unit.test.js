@@ -5,27 +5,27 @@ import { render } from 'enzyme';
 import Error from '../_error';
 
 describe('<Error />', () => {
-  it('getInitialProps will return object with status code', () => {
-    let object = Error.getInitialProps({ res: { statusCode: 404 } });
-    expect(object).toEqual({ statusCode: 404 });
+  it('getInitialProps should return object with status code', () => {
+    let props = Error.getInitialProps({ res: { statusCode: 404 } });
+    expect(props).toEqual({ statusCode: 404 });
 
-    object = Error.getInitialProps({ err: { statusCode: 404 } });
-    expect(object).toEqual({ statusCode: 404 });
+    props = Error.getInitialProps({ err: { statusCode: 404 } });
+    expect(props).toEqual({ statusCode: 404 });
 
-    object = Error.getInitialProps({
+    props = Error.getInitialProps({
       res: { statusCode: 404 },
       err: { statusCode: 500 },
     });
 
-    expect(object).toEqual({ statusCode: 404 });
+    expect(props).toEqual({ statusCode: 404 });
   });
 
-  it('renders correctly without status code', () => {
+  it('should render correctly without status code', () => {
     const document = render(<Error />);
     expect(toJson(document)).toMatchSnapshot();
   });
 
-  it('renders correctly with status code', () => {
+  it('should render correctly with status code', () => {
     const document = render(<Error statusCode={404} />);
     expect(toJson(document)).toMatchSnapshot();
   });
