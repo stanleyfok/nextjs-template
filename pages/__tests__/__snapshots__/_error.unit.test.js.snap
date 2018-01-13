@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> renders correctly with status code 1`] = `
+Array [
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  >
+    <p>
+      An error 404 occurred on server
+    </p>
+  </div>,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer here
+    </div>
+  </div>,
+]
+`;
+
+exports[`<Error /> renders correctly without status code 1`] = `
+Array [
+  <div
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+      <span>
+        Batman TV Programs
+      </span>
+    </div>
+  </div>,
+  <div
+    class="container"
+  >
+    <p>
+      An error occurred on client
+    </p>
+  </div>,
+  <div
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      This is footer here
+    </div>
+  </div>,
+]
+`;
