@@ -3,6 +3,7 @@ const glob = require('glob');
 const md5 = require('md5');
 
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { IgnorePlugin } = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -61,6 +62,8 @@ module.exports = {
     );
 
     config.plugins.push(
+      // ignore test files
+      new IgnorePlugin(/\.test\.js/),
       // clean up
       new CleanWebpackPlugin([
         path.join(__dirname, 'static', versionHash),
