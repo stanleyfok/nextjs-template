@@ -1,13 +1,6 @@
 const dotenv = require('dotenv');
 const fs = require('fs');
 
-// load dotenv if file exists
-/*
-if (fs.existsSync('./.env')) {
-  dotenv.config();
-}
-*/
-
 module.exports = {
   setupFiles: [
     '<rootDir>/jest.setup.js',
