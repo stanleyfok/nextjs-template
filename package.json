@@ -10,7 +10,7 @@
     "dev": "node server.js",
     "build": "next build",
     "prestart": "next build",
-    "start": "next start",
+    "start": "node server.js",
     "analyze": "ANALYZE=1 next build",
     "eslint": "./node_modules/.bin/eslint '**/*.js'",
     "eslint-fix": "./node_modules/.bin/eslint --fix '**/*.js'",
