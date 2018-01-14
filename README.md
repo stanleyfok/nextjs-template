@@ -205,6 +205,8 @@ npm run analyze
 
 ### 💡 Rule: Using Docker for deployment strategy
 
+A sample dockerfile is created for reference
+
 #### Related Files
 
  * [Dockerfile](https://github.com/stanleyfok/nextjs-template/blob/master/Dockerfile)
@@ -212,3 +214,5 @@ npm run analyze
  * [docker-compose.yml](https://github.com/stanleyfok/nextjs-template/blob/master/docker-compose.yml)
 
 ## To do
+
+ * implement Redux
