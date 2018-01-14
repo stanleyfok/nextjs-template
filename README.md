@@ -203,10 +203,12 @@ npm run analyze
 
 ## Design Philosophy - Deployment
 
-### 💡 Rule: Using Dockerfile for development and deployment strategy
+### 💡 Rule: Using Docker for deployment strategy
 
-to add
+#### Related Files
+
+ * [Dockerfile](https://github.com/stanleyfok/nextjs-template/blob/master/Dockerfile)
+ * [.dockerignore](https://github.com/stanleyfok/nextjs-template/blob/master/.dockerignore)
+ * [docker-compose.yml](https://github.com/stanleyfok/nextjs-template/blob/master/docker-compose.yml)
 
 ## To do
-
-* page transition is not smooth, probably due to waiting for API to load
