@@ -155,6 +155,40 @@ If you have any new release, remember to bump the version number. You static fil
 
 Also, do not check in any code under the static folder. Instead, please put your resources file under the `assets` folder. The webpack rules defined in [next.config.js](https://github.com/stanleyfok/nextjs-template/blob/master/next.config.js) will move your files to the static version hash folder.
 
+## Design Philosophy - i18N
+
+### 💡 Rule: Every string should be placed in translation Files
+
+No matter the site is for one or more locales, it is still a good practice to extract text into translation files. It will help us better organize the string and make changes very easily. The JSX files should be clean
+
+### 💡 Rule: Make sure no translation files are loaded if the page is rendered with SSR
+
+If the page is rendered by server side, the translation should be ready at server side already. Therefore, we should not expect a translation file is loaded. This can ensure the page load is faster by loading less files.
+
+### 💡 Rule: Translation should be organized with hierarchy
+
+By using the library (i18next)[https://www.i18next.com/], translation files are stored in JSON format. We should group the translation, rather than constructing a long translation key
+
+Good:
+```js
+{
+  "header": {
+    "title": "Batman TV Programs"
+  },
+  "footer": {
+    "text": "This is footer"
+  }
+}
+```
+
+Bad:
+```js
+{
+  "header_title": "Batman TV Programs",
+  "footer_text": "This is footer"
+}
+```
+
 ## Design Philosophy - User Experience
 
 ### 💡 Rule: Need to show progress bar when navigating between pages
