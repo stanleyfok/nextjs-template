@@ -7,7 +7,7 @@ const withI18N = (Child, namespaceArg = null) => {
   class I18NComponent extends React.Component {
     static async getInitialProps(ctx) {
       const childProps = await Child.getInitialProps(ctx);
-      let i18nProps = (ctx && ctx.req && !process.browser)
+      const i18nProps = (ctx && ctx.req && !process.browser)
         ? i18n.getInitialProps(ctx.req, namespaceArg)
         : {};
 
