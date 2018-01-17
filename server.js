@@ -8,7 +8,8 @@ const i18nextMiddleware = require('i18next-express-middleware');
 const i18nextBackend = require('i18next-node-fs-backend');
 const i18n = require('i18next');
 
-const pkg = require('./package.json')
+const i18nConfig = require('./configs/i18n');
+const pkg = require('./package.json');
 
 const dev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
@@ -29,13 +30,13 @@ if (fs.existsSync('./.env')) {
 i18n
   .use(i18nextBackend)
   .use(i18nextMiddleware.LanguageDetector)
-  .init({
+  .init(Object.assign({}, i18nConfig, {
     preload: ['en'], // preload all langages
-    ns: ['common', 'index'], // need to preload all the namespaces
+    ns: ['common', 'index', 'show'], // need to preload all the namespaces
     backend: {
       loadPath: path.join(localesPath, '{{lng}}/{{ns}}.json')
     }
-  }, () => {
+  }), () => {
   app.prepare().then(() => {
     const server = express();
 

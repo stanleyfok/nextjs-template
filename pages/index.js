@@ -6,9 +6,9 @@ import Error from './_error';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 
-import config from '../configs/config';
-import ApiClient from '../lib/api-client';
 import withI18N from '../hoc/withI18N';
+import ApiClient from '../lib/api-client';
+import config from '../configs/config';
 
 class Index extends React.Component {
   static async getInitialProps() {
@@ -61,4 +61,4 @@ Index.propTypes = {
   ]),
 };
 
-export default withI18N(Index, ['index', 'common']);
+export default withI18N(Index, ['index']);
