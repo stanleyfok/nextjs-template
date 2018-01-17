@@ -1,6 +1,3 @@
-const dotenv = require('dotenv');
-const fs = require('fs');
-
 module.exports = {
   setupFiles: [
     '<rootDir>/jest.setup.js',

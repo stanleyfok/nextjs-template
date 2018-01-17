@@ -21,7 +21,7 @@ class Show extends React.Component {
   }
 
   render() {
-    const {t, data, statusCode} = this.props;
+    const { t, data, statusCode } = this.props;
 
     if (statusCode >= 400) {
       return <Error statusCode={statusCode} />;
@@ -35,7 +35,7 @@ class Show extends React.Component {
       <Layout>
         <Meta
           key="0"
-          title={t('show:meta.title', { name: data.name})}
+          title={t('show:meta.title', { name: data.name })}
           description={t('show:meta.description')}
         />
         <div className="show">
@@ -62,8 +62,9 @@ class Show extends React.Component {
 }
 
 Show.propTypes = {
-  statusCode: PropTypes.number,
+  t: PropTypes.func,
   data: PropTypes.object,
+  statusCode: PropTypes.number,
 };
 
 export default withI18N(Show, ['show']);

@@ -11,13 +11,13 @@ module.exports = {
   interpolation: {
     escapeValue: false, // not needed for react!!
     formatSeparator: ',',
-    format: (value, format, lng) => {
+    format: (value, format) => {
       if (format === 'uppercase') return value.toUpperCase();
 
       // to add more formatting function if needed
       // ref: https://www.i18next.com/formatting.html
 
       return value;
-    }
-  }
-}
+    },
+  },
+};

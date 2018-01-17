@@ -18,6 +18,7 @@ const versionHash = md5(pkg.version);
 const handle = app.getRequestHandler();
 
 const routes = require('./configs/routes');
+
 const localesPath = path.join(__dirname, 'locales');
 
 // load dotenv if file exists
@@ -34,37 +35,37 @@ i18n
     preload: ['en'], // preload all langages
     ns: ['common', 'index', 'show'], // need to preload all the namespaces
     backend: {
-      loadPath: path.join(localesPath, '{{lng}}/{{ns}}.json')
-    }
+      loadPath: path.join(localesPath, '{{lng}}/{{ns}}.json'),
+    },
   }), () => {
-  app.prepare().then(() => {
-    const server = express();
+    app.prepare().then(() => {
+      const server = express();
 
-    // enable middleware for i18next
-    server.use(i18nextMiddleware.handle(i18n));
+      // enable middleware for i18next
+      server.use(i18nextMiddleware.handle(i18n));
 
-    // serve locales for client
-    server.use(`/locales/${versionHash}`, express.static(localesPath))
+      // serve locales for client
+      server.use(`/locales/${versionHash}`, express.static(localesPath));
 
-    Object.keys(routes).forEach((key) => {
-      const tokens = key.split(' ');
-      const method = tokens[0].toLowerCase();
-      const pattern = tokens[1];
-      const actualPage = routes[key];
+      Object.keys(routes).forEach((key) => {
+        const tokens = key.split(' ');
+        const method = tokens[0].toLowerCase();
+        const pattern = tokens[1];
+        const actualPage = routes[key];
 
-      server[method](pattern, (req, res) => {
-        app.render(req, res, actualPage, req.params);
+        server[method](pattern, (req, res) => {
+          app.render(req, res, actualPage, req.params);
+        });
       });
-    });
 
-    server.get('*', (req, res) => handle(req, res));
+      server.get('*', (req, res) => handle(req, res));
 
-    server.listen(port, (err) => {
-      if (err) throw err;
-      console.log('> Ready on http://localhost:3000');
+      server.listen(port, (err) => {
+        if (err) throw err;
+        console.log('> Ready on http://localhost:3000');
+      });
+    }).catch((ex) => {
+      console.error(ex.stack);
+      process.exit(1);
     });
-  }).catch((ex) => {
-    console.error(ex.stack);
-    process.exit(1);
   });
-});

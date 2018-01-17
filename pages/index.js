@@ -19,7 +19,7 @@ class Index extends React.Component {
   }
 
   render() {
-    const {t, data, statusCode} = this.props;
+    const { t, data, statusCode } = this.props;
 
     if (statusCode >= 400) {
       return <Error statusCode={statusCode} />;
@@ -54,11 +54,12 @@ class Index extends React.Component {
 }
 
 Index.propTypes = {
-  statusCode: PropTypes.number,
+  t: PropTypes.func,
   data: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
   ]),
+  statusCode: PropTypes.number,
 };
 
 export default withI18N(Index, ['index']);
