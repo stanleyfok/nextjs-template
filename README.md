@@ -167,7 +167,7 @@ If the page is rendered by server side, the translation should be ready at serve
 
 ### 💡 Rule: Translation should be organized with hierarchy
 
-By using the library (i18next)[https://www.i18next.com/], translation files are stored in JSON format. We should group the translation, rather than constructing a long translation key
+By using the library [i18next](https://www.i18next.com/), translation files are stored in JSON format. We should group the translation, rather than constructing a long translation key
 
 Good:
 ```js
