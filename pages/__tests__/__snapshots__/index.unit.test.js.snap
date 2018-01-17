@@ -16,7 +16,7 @@ Array [
         />
       </a>
       <span>
-        Batman TV Programs
+        header.title
       </span>
     </div>
   </div>,
@@ -33,7 +33,7 @@ Array [
     <div
       class="container"
     >
-      This is footer here
+      footer.text
     </div>
   </div>,
 ]
@@ -55,7 +55,7 @@ Array [
         />
       </a>
       <span>
-        Batman TV Programs
+        header.title
       </span>
     </div>
   </div>,
@@ -151,7 +151,7 @@ Array [
     <div
       class="container"
     >
-      This is footer here
+      footer.text
     </div>
   </div>,
 ]

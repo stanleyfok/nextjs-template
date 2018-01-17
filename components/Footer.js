@@ -1,11 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Footer = () => (
+import withI18N from '../hoc/withI18N';
+
+const Footer = ({ t }) => (
   <div className="footer">
     <div className="container">
-      This is footer here
+      {t('common:footer.text')}
     </div>
   </div>
 );
 
-export default Footer;
+Footer.propTypes = {
+  t: PropTypes.func,
+};
+
+export default withI18N(Footer);
