@@ -2,23 +2,20 @@
 
 exports[`<Header /> should render correctly with imagePath=/ 1`] = `
 <div
-  className="header"
+  class="header"
 >
   <div
-    className="container"
+    class="container"
   >
-    <Link
-      as="/"
-      href="/index"
+    <a
+      href="/"
     >
-      <a>
-        <img
-          src="/favicon.png"
-        />
-      </a>
-    </Link>
+      <img
+        src="/favicon.png"
+      />
+    </a>
     <span>
-      Batman TV Programs
+      header.title
     </span>
   </div>
 </div>
@@ -26,23 +23,20 @@ exports[`<Header /> should render correctly with imagePath=/ 1`] = `
 
 exports[`<Header /> should render correctly with imagePath=https://ssl-gumtree.classistatic.com/jobs/job-app/ 1`] = `
 <div
-  className="header"
+  class="header"
 >
   <div
-    className="container"
+    class="container"
   >
-    <Link
-      as="/"
-      href="/index"
+    <a
+      href="/"
     >
-      <a>
-        <img
-          src="https:/ssl-gumtree.classistatic.com/jobs/job-app/favicon.png"
-        />
-      </a>
-    </Link>
+      <img
+        src="https:/ssl-gumtree.classistatic.com/jobs/job-app/favicon.png"
+      />
+    </a>
     <span>
-      Batman TV Programs
+      header.title
     </span>
   </div>
 </div>

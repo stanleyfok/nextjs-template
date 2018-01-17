@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "title": "Batman Shows | Nextjs Template",
+    "description": "A comprehensive Nextjs template"
+  },
+  "content": {
+    "header": "Batman TV Programs",
+    "subTitle": "{{count}} programs are found."
+  }
+}
