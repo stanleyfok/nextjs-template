@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import withI18N from '../hoc/withI18N';
+import withI18N from './withI18N';
 
 const Footer = ({ t }) => (
   <div className="footer">

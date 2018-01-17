@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import path from 'path';
 import Link from 'next/link';
 
-import withI18N from '../hoc/withI18N';
+import withI18N from './withI18N';
 
 const Header = ({ imagePath, t }) => (
   <div className="header">

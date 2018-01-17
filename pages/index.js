@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Error from './_error';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
+import withI18N from '../components/withI18N';
 
-import withI18N from '../hoc/withI18N';
 import ApiClient from '../lib/api-client';
 import config from '../configs/config';
 
