@@ -34,7 +34,7 @@ class Index extends React.Component {
         />
         <div className="index">
           <h1>{t('index:content.header')}</h1>
-          <p>{data.length} programs are found.</p>
+          <p>{t('index:content.subTitle', { count: data.length })}</p>
           <ul>
             {data ?
               data.map(item =>

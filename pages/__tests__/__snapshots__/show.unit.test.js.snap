@@ -62,42 +62,46 @@ Array [
   <div
     class="container"
   >
-    <h1>
-      Batman
-    </h1>
     <div
-      class="row"
+      class="show"
     >
+      <h1>
+        Batman
+      </h1>
       <div
-        class="col-md-3"
+        class="row"
       >
-        <img
-          class="img-fluid"
-          src="http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg"
-        />
-      </div>
-      <div
-        class="col-md-9"
-      >
-        <div>
-          <p>
-            Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.
-          </p>
+        <div
+          class="col-md-3"
+        >
+          <img
+            class="img-fluid"
+            src="http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg"
+          />
+        </div>
+        <div
+          class="col-md-9"
+        >
+          <div>
+            <p>
+              Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="row text-center"
-    >
       <div
-        class="col-md-12"
+        class="row text-center"
       >
-        <a
-          class="btn btn-primary"
-          href="/"
+        <div
+          class="col-md-12"
         >
-          Back
-        </a>
+          <a
+            class="btn btn-primary"
+            href="/"
+          >
+            Back
+          </a>
+        </div>
       </div>
     </div>
   </div>,

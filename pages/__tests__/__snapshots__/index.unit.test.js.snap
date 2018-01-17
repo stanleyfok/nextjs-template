@@ -66,8 +66,11 @@ Array [
       class="index"
     >
       <h1>
-        Batman TV Programs
+        content.header
       </h1>
+      <p>
+        content.subTitle
+      </p>
       <ul>
         <li>
           <a
