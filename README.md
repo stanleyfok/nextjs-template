@@ -11,8 +11,12 @@ In the following sections, I have listed the design philosophy in this project t
 
 To run this example, simply do:
 ```sh
+npm run install
 npm run dev
 ```
+
+Then you will see a simple web app with 2 pages like this:
+![Screenshot](https://github.com/stanleyfok/nextjs-template/tree/master/assets/images/screenshot.png)
 
 ## Highlights
 
