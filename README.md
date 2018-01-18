@@ -174,7 +174,7 @@ Also, do not check in any code under the static folder. Instead, please put your
 
 ### 💡 Rule: Every string should be placed in translation Files
 
-No matter the site is for one or more locales, it is still a good practice to extract text into translation files. It will help us better organize the string and make changes very easily. The JSX files should be clean
+No matter the site is for one or more locales, it is still a good practice to extract text into translation files. It will help us better organize the string and make changes very easily. The JSX files should be clean and without text content.
 
 ### 💡 Rule: Make sure no translation files are loaded if the page is rendered with SSR
 
