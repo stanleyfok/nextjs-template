@@ -224,7 +224,7 @@ Need to write unit test for every modules or UI components
 
 This article says well how to manage the test files: http://www.tysoncadenhead.com/blog/where-should-i-put-javascript-unit-tests/
 
-I take the approach having the __tests__ folder in each folder
+I take the approach having the `__tests__` folder in each folder
 
 ### 💡 Rule: Using Jest and Enzyme for unit testing tools
 
