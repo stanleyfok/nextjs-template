@@ -30,6 +30,7 @@ Then you will see a simple web app with 2 pages like this:
  * consideration of using CDN for hosting static files
  * with eslint setup with rules from airbnb-base and react/recommended
  * with sasslint setup
+ * [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) support
  * a sample dockerfile and docker-compose.yml
 
 ## Design Philosophy - Dev Environment
