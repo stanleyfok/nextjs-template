@@ -14,6 +14,15 @@ To run this example, simply do:
 npm run dev
 ```
 
+## Highlights
+
+ * a project skeleton on [Nextjs](https://github.com/zeit/next.js/) SSR supported React framework
+ * i18n support by integrating [i18next](https://www.i18next.com/)
+ * a sample dockerfile and docker-compose.yml
+ * using jest as unit testing framework with examples
+ * use of scss
+ * consideration of using CDN for hosting static files
+
 ## Design Philosophy - Dev Environment
 
 ### 💡 Rule: Hot Reload should be supported during development
