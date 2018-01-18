@@ -228,7 +228,7 @@ I take the approach having the `__tests__` folder in each folders, so unit testi
 
 ### 💡 Rule: Using Jest and Enzyme for unit testing tools
 
-The library (enzyme)[https://www.npmjs.com/package/enzyme] and (enzyme-to-json)[https://www.npmjs.com/package/enzyme-to-json] are mainly used to write unit tests
+The library [enzyme](https://www.npmjs.com/package/enzyme) and [enzyme-to-json](https://www.npmjs.com/package/enzyme-to-json) are mainly used to write unit tests
 
 ### 💡 Rule: API client library has to be mocked
 
