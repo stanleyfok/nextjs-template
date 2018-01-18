@@ -17,11 +17,12 @@ npm run dev
 ## Highlights
 
  * a project skeleton on [Nextjs](https://github.com/zeit/next.js/) SSR supported React framework
- * i18n support by integrating [i18next](https://www.i18next.com/)
- * a sample dockerfile and docker-compose.yml
- * using jest as unit testing framework with examples
  * use of scss
+ * i18n support by integrating [i18next](https://www.i18next.com/)
+ * using jest as unit testing framework with examples on component unit testing with snapshots and mocking api client
  * consideration of using CDN for hosting static files
+ * with eslint setup with rules from airbnb-base and react/recommended
+ * a sample dockerfile and docker-compose.yml
 
 ## Design Philosophy - Dev Environment
 
@@ -75,19 +76,19 @@ This components is representing the meta data to be placed in the <head> section
 
 This is where we define the actual page content. A page needs to include the Meta component and Layout component. The Meta components defines those requires meta fields, such as page title and description, while the Layout component indicates the look and feel of the page.
 
-Also, thanks for React16, we are able to return an array of elements. Here is how it looks in the render method for a page:
+Here is how it looks in the render method for a page:
 ```js
 render() {
-  return [
-    <Meta
-      key="0"
-      title="Page Title"
-      description="Page Descriptipn"
-    />,
+  return (
     <Layout key="1">
+      <Meta
+        key="0"
+        title="Page Title"
+        description="Page Descriptipn"
+      />
       <p>Hello World</p>
     </Layout>,
-  ];
+  );
 }
 ```
 
