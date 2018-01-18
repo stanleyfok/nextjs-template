@@ -89,9 +89,8 @@ Here is how it looks in the render method for a page:
 ```js
 render() {
   return (
-    <Layout key="1">
+    <Layout>
       <Meta
-        key="0"
         title="Page Title"
         description="Page Descriptipn"
       />
