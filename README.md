@@ -157,7 +157,7 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
 
 ### 💡 Rule: Use of SCSS
 
-SCSS is a powerful CSS syntax extension which makes our lives easier. I have given up the use of [styled-jsx](https://github.com/zeit/styled-jsx) as I found it easier to organize my styles with scss. For example, I can change the whole site's look and feel by replacing the css file. I couldn't figure out a nice way to do this in styled-jsx.
+SCSS is a powerful CSS syntax extension which makes our lives easier. I have given up the use of [styled-jsx](https://github.com/zeit/styled-jsx) as I found it easier to organize my styles with scss. For example, I can change the whole site's look and feel by replacing the css file. I couldn't figure out a nice way to do this in styled-jsx. I would be great if someone can share me your experience :)
 
 ### 💡 Rule: Use new path for a new version of asset files
 
