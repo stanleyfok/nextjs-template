@@ -16,7 +16,7 @@ npm run dev
 ```
 
 Then you will see a simple web app with 2 pages like this:
-![Screenshot](https://raw.githubusercontent.com/stanleyfok/nextjs-template/master/assets/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/stanleyfok/nextjs-template/master/assets/images/screenshot.png | width=300)
 
 ## Highlights
 
