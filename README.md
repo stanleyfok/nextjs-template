@@ -166,7 +166,7 @@ When using a CDN, a URL can be cached for a long period of time. Even you replac
 I have introduced 'version hash' to solve it, which is simply the md5 hash of the version number in package.json. A folder named by the version hash will be generated under the path `/static`. For example:
 `/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png`
 
-If you have any new release, remember to bump the version number. You static files will then be placed in a new url.
+If you have any new release, remember to bump the version number. Your static files will then be placed in a new url.
 
 Also, do not check in any code under the static folder. Instead, please put your resources file under the `assets` folder. The webpack rules defined in [next.config.js](https://github.com/stanleyfok/nextjs-template/blob/master/next.config.js) will move your files to the static version hash folder.
 
