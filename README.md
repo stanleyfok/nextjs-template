@@ -161,7 +161,7 @@ SCSS is a powerful CSS syntax extension which makes our lives easier. I have giv
 
 ### 💡 Rule: Use new path for a new version of asset files
 
-When using a CDN, a URL can be cached for a long period of time. Even you replace with a new content, the CDN will still serve the copy of the files stored in the CDN. The safest way is to have different file paths for different releases.
+When using a CDN, a URL can be cached for a long period of time. Even you replace with a new content, the CDN will still serve the previous copy of the files stored in the CDN. The safest way is to have different file paths for different releases.
 
 I have introduced 'version hash' to solve it, which is simply the md5 hash of the version number in package.json. A folder named by the version hash will be generated under the path `/static`. For example:
 `/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png`
