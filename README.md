@@ -240,7 +240,7 @@ Reference: https://hackernoon.com/api-testing-with-jest-d1ab74005c0a
 
 ### 💡 Rule: Analyzer
 
-It is always a good practice to run the (webpack-bundle-analyzer)[https://github.com/webpack-contrib/webpack-bundle-analyzer] to understand how to optimize your app. To learn some optimization skills on Nextjs, please refer to:
+It is always a good practice to run the [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to understand how to optimize your app. To learn some optimization skills on Nextjs, please refer to:
 
 * [Lazy Loading Modules](https://learnnextjs.com/excel/lazy-loading-modules)
 * [Lazy Loading Components](https://learnnextjs.com/excel/lazy-loading-components)
