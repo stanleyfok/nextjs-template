@@ -22,11 +22,14 @@ Then you will see a simple web app with 2 pages like this:
 ## Highlights
 
  * a project skeleton on [Nextjs](https://github.com/zeit/next.js/) SSR supported React framework
+ * integrated with express.js for nice URL routing
  * use of scss
  * i18n support by integrating [i18next](https://www.i18next.com/)
  * using jest as unit testing framework with examples on component unit testing with snapshots and mocking api client
+ * consideration of security on config files
  * consideration of using CDN for hosting static files
  * with eslint setup with rules from airbnb-base and react/recommended
+ * with sasslint setup
  * a sample dockerfile and docker-compose.yml
 
 ## Design Philosophy - Dev Environment
