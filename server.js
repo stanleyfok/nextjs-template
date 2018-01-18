@@ -1,8 +1,6 @@
 const express = require('express');
 const next = require('next');
-const dotenv = require('dotenv');
 const path = require('path');
-const fs = require('fs');
 const md5 = require('md5');
 const i18nextMiddleware = require('i18next-express-middleware');
 const i18nextBackend = require('i18next-node-fs-backend');
@@ -20,11 +18,6 @@ const handle = app.getRequestHandler();
 const routes = require('./configs/routes');
 
 const localesPath = path.join(__dirname, 'locales');
-
-// load dotenv if file exists
-if (fs.existsSync('./.env')) {
-  dotenv.config();
-}
 
 // init i18next with serverside settings
 // using i18next-express-middleware
@@ -62,10 +55,14 @@ i18n
 
       server.listen(port, (err) => {
         if (err) throw err;
+
+        // eslint-disable-next-line no-console
         console.log('> Ready on http://localhost:3000');
       });
     }).catch((ex) => {
+      // eslint-disable-next-line no-console
       console.error(ex.stack);
+
       process.exit(1);
     });
   });

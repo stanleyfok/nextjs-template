@@ -6,5 +6,5 @@ module.exports = {
   NODE_ENV: process.env.NODE_ENV,
   VERSION_HASH: md5(pkg.version),
   API_BASE_URL: process.env.API_BASE_URL,
-  STATIC_SERVER: process.env.STATIC_SERVER,
+  ASSET_PREFIX: process.env.ASSET_PREFIX,
 };

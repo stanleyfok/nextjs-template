@@ -1,6 +1,8 @@
 const path = require('path');
 const glob = require('glob');
 const md5 = require('md5');
+const fs = require('fs');
+const dotenv = require('dotenv');
 
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { IgnorePlugin } = require('webpack');
@@ -14,7 +16,14 @@ const analyze = process.env.ANALYZE;
 const nodeEnv = process.env.NODE_ENV || 'dev';
 const versionHash = md5(pkg.version);
 
+// load dotenv if file exists
+if (fs.existsSync('./.env')) {
+  dotenv.config();
+}
+
 module.exports = {
+  assetPrefix: process.env.ASSET_PREFIX,
+
   // disabling file-system routing
   useFileSystemPublicRoutes: false,
 

@@ -32,7 +32,7 @@ exports[`<Header /> should render correctly with imagePath=https://ssl-gumtree.c
       href="/"
     >
       <img
-        src="https:/ssl-gumtree.classistatic.com/jobs/job-app/favicon.png"
+        src="https://ssl-gumtree.classistatic.com/jobs/job-app/favicon.png"
       />
     </a>
     <span>

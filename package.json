@@ -7,9 +7,9 @@
     "url": "git://github.com/stanleyfok/nextjs-template.git"
   },
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
-    "prestart": "next build",
+    "dev": "npm run cc; node server.js",
+    "build": "npm run cc; next build",
+    "prestart": "npm run build",
     "start": "node server.js",
     "analyze": "ANALYZE=1 next build",
     "eslint": "./node_modules/.bin/eslint '**/*.js'",

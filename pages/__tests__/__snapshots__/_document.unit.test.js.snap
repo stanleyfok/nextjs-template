@@ -9,11 +9,17 @@ exports[`<Document /> should render correctly 1`] = `
       name="viewport"
     />
     <link
-      href="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+      href="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
       rel="shortcut icon"
     />
     <link
-      href="/static/47cd76e43f74bbc2e1baaf194d07e1fa/styles/bundle.css"
+      crossOrigin="anonymous"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+      integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+      rel="stylesheet"
+    />
+    <link
+      href="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/styles/bundle.css"
       rel="stylesheet"
     />
   </Head>
