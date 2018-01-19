@@ -33,7 +33,7 @@ Then you will see a simple web app with 2 pages like this:
  * [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) support
  * a sample dockerfile and docker-compose.yml, which the docker-compose.yml simulates a environment having an application server and a CDN server
 
-## Use Commands
+## Useful Commands
 
 ```sh
 #to run in dev mode
