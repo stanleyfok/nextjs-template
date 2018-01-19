@@ -11,7 +11,7 @@ In the following sections, I have listed the design philosophy in this project t
 
 To run this example, simply do:
 ```sh
-npm run install
+npm install
 npm run dev
 ```
 

@@ -22,6 +22,7 @@
     "test-coverage": "NODE_ENV=test jest --coverage"
   },
   "author": "Stanley Fok <stanleyfok@gmail.com> (https://github.com/stanleyfok)",
+  "license": "MIT",
   "dependencies": {
     "autoprefixer": "^7.2.4",
     "babel-plugin-module-resolver": "^3.0.0",
