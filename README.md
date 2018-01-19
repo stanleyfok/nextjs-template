@@ -255,6 +255,10 @@ npm run analyze
 
 A sample dockerfile is created for reference
 
+### 💡 Rule: Using Docker Compose to simulate a close to production env
+
+Docker compose can help you to simulate an environment closer to your production environment. In this example, I have added a CDN server to simulate serving static files through CDN.
+
 #### Related Files
 
  * [Dockerfile](https://github.com/stanleyfok/nextjs-template/blob/master/Dockerfile)
