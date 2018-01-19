@@ -33,6 +33,43 @@ Then you will see a simple web app with 2 pages like this:
  * [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) support
  * a sample dockerfile and docker-compose.yml, which the docker-compose.yml simulates a environment having an application server and a CDN server
 
+## Use Commands
+
+```sh
+#to run in dev mode
+npm run dev
+
+#to run in qa or production env. Expect to run this in docker
+npm run start
+
+#to run the webpack analyzer
+npm run analyze
+
+#to check js and json syntax
+npm run eslint
+
+#to auto fix js and json syntax
+npm run eslint-fix
+
+#to check scss syntax
+npm run sasslint
+
+#to clear cache and .next folder
+npm run cc
+
+#to run all jest test cases
+npm run test
+
+#to run only unit tests
+npm run test-unit
+
+#to run only integration tests
+npm run test-int
+
+#to show test coverage report
+npm run test-coverage
+```
+
 ## Design Philosophy - Dev Environment
 
 ### 💡 Rule: Hot Reload should be supported during development
