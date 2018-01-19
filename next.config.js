@@ -12,14 +12,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const pkg = require('./package.json');
 
-const analyze = process.env.ANALYZE;
-const nodeEnv = process.env.NODE_ENV || 'dev';
-const versionHash = md5(pkg.version);
-
 // load dotenv if file exists
 if (fs.existsSync('./.env')) {
   dotenv.config();
 }
+
+const analyze = process.env.ANALYZE;
+const nodeEnv = process.env.NODE_ENV || 'dev';
+const versionHash = md5(pkg.version);
 
 module.exports = {
   assetPrefix: process.env.ASSET_PREFIX,
@@ -50,6 +50,7 @@ module.exports = {
       },
     ];
 
+    console.log(nodeEnv)
     if (nodeEnv !== 'dev') {
       scssLoaders = ExtractTextPlugin.extract({
         use: scssLoaders,
