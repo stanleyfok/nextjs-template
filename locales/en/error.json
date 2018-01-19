@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "title": "Error | Nextjs Template",
+    "description": "A comprehensive Nextjs template"
+  },
+  "content": {
+    "withStatusCode": "An error occurred with status code: {{statusCode}}",
+    "withoutStatusCode": "An error occurred"
+  }
+}
