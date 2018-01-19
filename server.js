@@ -10,7 +10,7 @@ const routes = require('./configs/routes');
 const i18nConfig = require('./configs/i18n');
 
 const dev = envConfig.NODE_ENV === 'dev';
-const localesPath = path.join(__dirname, 'locales');
+const localesPath = path.join(__dirname, 'assets', 'locales');
 
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -32,9 +32,6 @@ i18n
 
       // enable middleware for i18next
       server.use(i18nextMiddleware.handle(i18n));
-
-      // serve locales for client
-      server.use(`/locales/${envConfig.versionHash}`, express.static(localesPath));
 
       Object.keys(routes).forEach((key) => {
         const tokens = key.split(' ');

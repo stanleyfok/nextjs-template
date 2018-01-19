@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "npm run cc; node server.js",
-    "build": "npm run cc; next build",
+    "build": "npm run cc; next build; cp -r .next/static .",
     "prestart": "npm run build",
     "start": "node server.js",
     "analyze": "ANALYZE=1 next build",

@@ -30,7 +30,7 @@ module.exports = {
       {
         loader: 'sass-loader',
         options: {
-          includePaths: ['styles', 'node_modules']
+          includePaths: ['node_modules']
             .map(d => path.join(__dirname, d))
             .map(g => glob.sync(g))
             .reduce((a, c) => a.concat(c), []),
@@ -72,10 +72,14 @@ module.exports = {
           from: path.join(__dirname, 'assets', 'images'),
           to: path.join(__dirname, 'static', envConfig.VERSION_HASH, 'images'),
         },
+        {
+          from: path.join(__dirname, 'assets', 'locales'),
+          to: path.join(__dirname, 'static', envConfig.VERSION_HASH, 'locales'),
+        },
       ], {
         copyUnmodified: true,
       }),
-      new ExtractTextPlugin(path.join(__dirname, 'static', envConfig.VERSION_HASH, 'styles', 'bundle.css')),
+      new ExtractTextPlugin(path.join('static', envConfig.VERSION_HASH, 'styles', 'bundle.css')),
     );
 
     return config;

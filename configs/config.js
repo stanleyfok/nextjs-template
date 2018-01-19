@@ -6,7 +6,7 @@ export default {
     static: `${ASSET_PREFIX}/static/${VERSION_HASH}`,
     styles: `${ASSET_PREFIX}/static/${VERSION_HASH}/styles`,
     images: `${ASSET_PREFIX}/static/${VERSION_HASH}/images`,
-    locales: `${ASSET_PREFIX}/locales/${VERSION_HASH}`,
+    locales: `${ASSET_PREFIX}/static/${VERSION_HASH}/locales`,
   },
   api: {
     baseURL: API_BASE_URL,
