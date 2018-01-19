@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import path from 'path';
+import urljoin from 'url-join';
 
 import Error from './_error';
 import Layout from '../components/Layout';
@@ -29,12 +29,11 @@ class Show extends React.Component {
 
     const image = data.image
       ? data.image.medium
-      : path.join(config.paths.images, 'placeholder.png');
+      : urljoin(config.paths.images, 'placeholder.png');
 
     return (
       <Layout>
         <Meta
-          key="0"
           title={t('show:meta.title', { name: data.name })}
           description={t('show:meta.description')}
         />

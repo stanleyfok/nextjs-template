@@ -50,7 +50,6 @@ module.exports = {
       },
     ];
 
-    console.log(nodeEnv)
     if (nodeEnv !== 'dev') {
       scssLoaders = ExtractTextPlugin.extract({
         use: scssLoaders,

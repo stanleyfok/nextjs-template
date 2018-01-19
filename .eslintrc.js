@@ -15,7 +15,8 @@ module.exports = {
   },
   "plugins": [
     "react",
-    "jest"
+    "jest",
+    "json"
   ],
   "extends": [
     "airbnb-base",

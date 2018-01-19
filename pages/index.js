@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import slug from 'slug';
 
 import Error from './_error';
 import Layout from '../components/Layout';
@@ -28,7 +29,6 @@ class Index extends React.Component {
     return (
       <Layout>
         <Meta
-          key="0"
           title={t('index:meta.title')}
           description={t('index:meta.description')}
         />
@@ -39,7 +39,7 @@ class Index extends React.Component {
             {data ?
               data.map(item =>
                 <li key={item.show.id}>
-                  <Link prefetch href={`/show?id=${item.show.id}`} as={`/shows/${item.show.id}`}>
+                  <Link prefetch href={`/show?id=${item.show.id}`} as={`/shows/${item.show.id}-${slug(item.show.name)}`}>
                     <a>{item.show.name} {item.show.rating.average ? `(${item.show.rating.average})` : ''}</a>
                   </Link>
                 </li>)
