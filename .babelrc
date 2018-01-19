@@ -7,7 +7,7 @@
   "presets": ["next/babel"],
   "plugins": [
     [
-      "transform-define", "./global-config.js"
+      "transform-define", "./env-config.js"
     ],
     [
       "module-resolver", {

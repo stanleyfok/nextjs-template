@@ -1,23 +1,19 @@
 const express = require('express');
 const next = require('next');
 const path = require('path');
-const md5 = require('md5');
 const i18nextMiddleware = require('i18next-express-middleware');
 const i18nextBackend = require('i18next-node-fs-backend');
 const i18n = require('i18next');
 
-const i18nConfig = require('./configs/i18n');
-const pkg = require('./package.json');
-
-const dev = process.env.NODE_ENV !== 'production';
-const port = process.env.PORT || 3000;
-const app = next({ dev });
-const versionHash = md5(pkg.version);
-const handle = app.getRequestHandler();
-
+const envConfig = require('./env-config');
 const routes = require('./configs/routes');
+const i18nConfig = require('./configs/i18n');
 
+const dev = envConfig.NODE_ENV === 'dev';
 const localesPath = path.join(__dirname, 'locales');
+
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
 // init i18next with serverside settings
 // using i18next-express-middleware
@@ -38,7 +34,7 @@ i18n
       server.use(i18nextMiddleware.handle(i18n));
 
       // serve locales for client
-      server.use(`/locales/${versionHash}`, express.static(localesPath));
+      server.use(`/locales/${envConfig.versionHash}`, express.static(localesPath));
 
       Object.keys(routes).forEach((key) => {
         const tokens = key.split(' ');
@@ -53,11 +49,11 @@ i18n
 
       server.get('*', (req, res) => handle(req, res));
 
-      server.listen(port, (err) => {
+      server.listen(envConfig.PORT, (err) => {
         if (err) throw err;
 
         // eslint-disable-next-line no-console
-        console.log('> Ready on http://localhost:3000');
+        console.log(`> Ready on http://localhost:${envConfig.PORT}`);
       });
     }).catch((ex) => {
       // eslint-disable-next-line no-console

@@ -15,7 +15,8 @@ coverage
 
 # others
 .git
-*.md
+.md
 .tmp
 .log
 .log.*
+.DS_Store
