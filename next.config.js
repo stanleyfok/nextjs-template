@@ -7,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const envConfig = require('./env-config');
+const envConfig = require('./env.config');
 
 module.exports = {
   assetPrefix: envConfig.ASSET_PREFIX,

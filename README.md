@@ -182,12 +182,12 @@ export default {
 
 However, the problem is that this would leak internal information to the public, which maybe potentially a security issue.
 
-To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during babel compilation. The variables which can be replaced during the compile time are defined at [env-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/env-config.js)
+To solve this problem, the babel plugin [transform define](https://www.npmjs.com/package/babel-plugin-transform-define) is used. It helps to rewrite a variable to its actual value during babel compilation. The variables which can be replaced during the compile time are defined at [env.config.js](https://github.com/stanleyfok/nextjs-template/blob/master/env.config.js)
 
 #### Related Files
 
  * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
- * [env-config.js](https://github.com/stanleyfok/nextjs-template/blob/master/env-config.js)
+ * [env.config.js](https://github.com/stanleyfok/nextjs-template/blob/master/env.config.js)
 
 ## Design Philosophy - CSS and other media files
 

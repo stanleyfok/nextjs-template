@@ -2,7 +2,6 @@
 .next
 node_modules
 static
-.env
 
 # docker related
 Dockerfile

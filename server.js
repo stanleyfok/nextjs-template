@@ -5,7 +5,7 @@ const i18nextMiddleware = require('i18next-express-middleware');
 const i18nextBackend = require('i18next-node-fs-backend');
 const i18n = require('i18next');
 
-const envConfig = require('./env-config');
+const envConfig = require('./env.config');
 const routes = require('./configs/routes');
 const i18nConfig = require('./configs/i18n');
 
