@@ -1,6 +1,6 @@
 files:
   include:
-    - 'resources/styles/**/*.scss'
+    - 'assets/styles/**/*.scss'
   ignore:
     - 'node_modules/**'
 
