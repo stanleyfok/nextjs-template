@@ -304,4 +304,6 @@ Docker compose can help you to simulate an environment closer to your production
 
 ## To do
  * error page should not return 200 status code
+ * Add BEM example for CSS
+ * define locales as array and loop them in jsx
  * implement Redux

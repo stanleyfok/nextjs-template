@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Error from 'next/error';
 
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
+import Error from '../components/Error';
 import withI18N from '../components/withI18N';
+import withLayout from '../components/withLayout';
 
-class MyError extends Error {
+class MyError extends React.Component {
   static getInitialProps({ res, err }) {
     const { statusCode } = res || err;
 
@@ -16,22 +17,14 @@ class MyError extends Error {
   render() {
     const { t, statusCode } = this.props;
 
-    return (
-      <Layout>
-        <Meta
-          title={t('error:meta.title')}
-          description={t('error:meta.description')}
-        />
-        <div className="error">
-          <p>
-            {this.props.statusCode
-              ? t('error:content.withStatusCode', { statusCode })
-              : t('error:content.withoutStatusCode')
-            }
-          </p>
-        </div>
-      </Layout>
-    );
+    return [
+      <Meta
+        key="0"
+        title={t('error:meta.title')}
+        description={t('error:meta.description')}
+      />,
+      <Error key="1" statusCode={statusCode} />,
+    ];
   }
 }
 
@@ -40,4 +33,4 @@ MyError.propTypes = {
   statusCode: PropTypes.number,
 };
 
-export default withI18N(MyError, ['error']);
+export default withI18N(withLayout(MyError, Layout), ['error']);
