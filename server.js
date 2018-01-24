@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const fs = require('fs');
 const path = require('path');
 const i18nextMiddleware = require('i18next-express-middleware');
 const i18nextBackend = require('i18next-node-fs-backend');
@@ -22,7 +23,7 @@ i18n
   .use(i18nextMiddleware.LanguageDetector)
   .init(Object.assign({}, i18nConfig, {
     preload: ['en'], // preload all langages
-    ns: ['common', 'index', 'show', 'error'], // need to preload all the namespaces
+    ns: fs.readdirSync(path.join(localesPath, 'en')).map(file => path.parse(file).name),
     backend: {
       loadPath: path.join(localesPath, '{{lng}}/{{ns}}.json'),
     },
