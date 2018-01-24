@@ -6,7 +6,6 @@ import slug from 'slug';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import Error from '../components/Error';
-import withI18N from '../components/withI18N';
 import withLayout from '../components/withLayout';
 
 import ApiClient from '../lib/api-client';
@@ -61,4 +60,4 @@ Index.propTypes = {
   statusCode: PropTypes.number,
 };
 
-export default withI18N(withLayout(Index, Layout), ['index']);
+export default withLayout(Index, Layout, ['index']);

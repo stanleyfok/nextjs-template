@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import withI18N from './withI18N';
 import config from '../configs/config';
 
-const withLayout = (Child, Layout) => {
+const withLayout = (Child, Layout, namespaces) => {
   class LayoutComponent extends React.Component {
     static async getInitialProps(ctx) {
       const newCtx = Object.assign({}, ctx, { config });
@@ -25,7 +26,7 @@ const withLayout = (Child, Layout) => {
     config: PropTypes.object,
   };
 
-  return LayoutComponent;
+  return withI18N(LayoutComponent, namespaces);
 };
 
 export default withLayout;

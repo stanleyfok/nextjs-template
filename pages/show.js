@@ -7,7 +7,6 @@ import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import Error from '../components/Error';
 import withLayout from '../components/withLayout';
-import withI18N from '../components/withI18N';
 
 import ApiClient from '../lib/api-client';
 
@@ -68,4 +67,4 @@ Show.propTypes = {
   imagePath: PropTypes.string,
 };
 
-export default withI18N(withLayout(Show, Layout), ['show']);
+export default withLayout(Show, Layout, ['show']);
