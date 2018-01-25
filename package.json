@@ -41,7 +41,7 @@
     "i18next-xhr-backend": "^1.5.1",
     "isomorphic-unfetch": "^2.0.0",
     "md5": "^2.2.1",
-    "next": "^4.2.1",
+    "next": "^4.2.3",
     "node-sass": "^4.7.2",
     "nprogress": "^0.2.0",
     "postcss-easy-import": "^3.0.0",
