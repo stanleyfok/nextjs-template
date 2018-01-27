@@ -5,7 +5,6 @@ import slug from 'slug';
 
 import withI18N from '../hoc/withI18N';
 import Error from '../common/Error';
-import Meta from '../common/Meta';
 
 const Index = ({ t, result }) => {
   if (result.statusCode >= 400) {
@@ -14,10 +13,6 @@ const Index = ({ t, result }) => {
 
   return (
     <div>
-      <Meta
-        title={t('index:meta.title')}
-        description={t('index:meta.description')}
-      />
       <div className="index">
         <h1>{t('index:content.header')}</h1>
         <p>{t('index:content.subTitle', { count: result.data.length })}</p>

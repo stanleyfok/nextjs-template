@@ -6,9 +6,8 @@ import urljoin from 'url-join';
 import withI18N from '../hoc/withI18N';
 import withConfig from '../hoc/withConfig';
 import Error from '../common/Error';
-import Meta from '../common/Meta';
 
-const Show = ({ config, t, result }) => {
+const Show = ({ config, result }) => {
   if (result.statusCode >= 400) {
     return <Error statusCode={result.statusCode} />;
   }
@@ -19,10 +18,6 @@ const Show = ({ config, t, result }) => {
 
   return (
     <div>
-      <Meta
-        title={t('show:meta.title', { name: result.data.name })}
-        description={t('show:meta.description')}
-      />
       <div className="show">
         <h1>{result.data.name}</h1>
         <div className="row">
@@ -47,7 +42,6 @@ const Show = ({ config, t, result }) => {
 
 Show.propTypes = {
   config: PropTypes.object,
-  t: PropTypes.func,
   result: PropTypes.object,
 };
 

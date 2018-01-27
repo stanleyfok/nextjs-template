@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
+import Meta from '../components/common/Meta';
 import Error from '../components/common/Error';
 
 class ErrorPage extends React.Component {
@@ -14,10 +15,14 @@ class ErrorPage extends React.Component {
   }
 
   render() {
-    const { statusCode } = this.props;
+    const { t, statusCode } = this.props;
 
     return (
       <Layout>
+        <Meta
+          title={t('index:meta.title')}
+          description={t('index:meta.description')}
+        />
         <Error statusCode={statusCode} />
       </Layout>
     );
@@ -29,4 +34,4 @@ ErrorPage.propTypes = {
   statusCode: PropTypes.number,
 };
 
-export default withPage(withI18N(ErrorPage, ['error']));
+export default withPage(withI18N(ErrorPage, ['common', 'error']));

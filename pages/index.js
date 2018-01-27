@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
+import Meta from '../components/common/Meta';
 import Index from '../components/content/Index';
 
 import ApiClient from '../lib/api-client';
@@ -18,10 +19,14 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const { result } = this.props;
+    const { t, result } = this.props;
 
     return (
       <Layout>
+        <Meta
+          title={t('index:meta.title')}
+          description={t('index:meta.description')}
+        />
         <Index result={result} />
       </Layout>
     );
@@ -30,6 +35,7 @@ class IndexPage extends React.Component {
 
 IndexPage.propTypes = {
   result: PropTypes.object,
+  t: PropTypes.func,
 };
 
 export default withPage(withI18N(IndexPage, ['index']));

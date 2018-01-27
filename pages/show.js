@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
+import Meta from '../components/common/Meta';
 import Show from '../components/content/Show';
 
 import ApiClient from '../lib/api-client';
@@ -18,10 +19,14 @@ class ShowPage extends React.Component {
   }
 
   render() {
-    const { result } = this.props;
+    const { t, result } = this.props;
 
     return (
       <Layout>
+        <Meta
+          title={t('show:meta.title', { name: result.data.name })}
+          description={t('show:meta.description')}
+        />
         <Show result={result} />
       </Layout>
     );
@@ -30,6 +35,7 @@ class ShowPage extends React.Component {
 
 ShowPage.propTypes = {
   result: PropTypes.object,
+  t: PropTypes.func,
 };
 
 export default withPage(withI18N(ShowPage, ['show']));
