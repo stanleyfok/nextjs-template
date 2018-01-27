@@ -2,41 +2,23 @@
 
 exports[`<Header /> should render correctly with imagePath=/ 1`] = `
 <div
-  class="header"
+  className="header"
 >
   <div
-    class="container"
+    className="container"
   >
-    <a
-      href="/"
+    <Link
+      as="/"
+      href="/index"
     >
-      <img
-        src="/favicon.png"
-      />
-    </a>
+      <a>
+        <img
+          src="/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+        />
+      </a>
+    </Link>
     <span>
-      header.title
-    </span>
-  </div>
-</div>
-`;
-
-exports[`<Header /> should render correctly with imagePath=https://ssl-gumtree.classistatic.com/jobs/job-app/ 1`] = `
-<div
-  class="header"
->
-  <div
-    class="container"
-  >
-    <a
-      href="/"
-    >
-      <img
-        src="https://ssl-gumtree.classistatic.com/jobs/job-app/favicon.png"
-      />
-    </a>
-    <span>
-      header.title
+      common:header.title
     </span>
   </div>
 </div>

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> should render correctly with statusCode 1`] = `
+<div
+  className="error"
+>
+  <p>
+    error:content.withStatusCode
+  </p>
+</div>
+`;
+
+exports[`<Error /> should render correctly without statusCode 1`] = `
+<div
+  className="error"
+>
+  <p>
+    error:content.withoutStatusCode
+  </p>
+</div>
+`;

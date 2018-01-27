@@ -7,7 +7,7 @@ exports[`<Footer /> should render correctly 1`] = `
   <div
     class="container"
   >
-    footer.text
+    common:footer.text
   </div>
 </div>
 `;

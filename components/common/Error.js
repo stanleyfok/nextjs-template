@@ -20,3 +20,4 @@ Error.propTypes = {
 };
 
 export default withI18N(Error, ['error']);
+export const undecorated = Error;

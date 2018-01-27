@@ -1,17 +1,13 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
-import { render } from 'enzyme';
+import { shallow } from 'enzyme';
 
-import Header from '../Header';
+import { undecorated as Header } from '../Header';
+import { t, config } from '../../../lib/testHelper';
 
 describe('<Header />', () => {
   it('should render correctly with imagePath=/', () => {
-    const header = render(<Header imagePath="/"/>);
-    expect(toJson(header)).toMatchSnapshot();
-  });
-
-  it('should render correctly with imagePath=https://ssl-gumtree.classistatic.com/jobs/job-app/', () => {
-    const header = render(<Header imagePath="https://ssl-gumtree.classistatic.com/jobs/job-app/"/>);
+    const header = shallow(<Header t={t} config={config}/>);
     expect(toJson(header)).toMatchSnapshot();
   });
 });

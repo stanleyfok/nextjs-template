@@ -16,3 +16,4 @@ Footer.propTypes = {
 };
 
 export default withI18N(Footer);
+export const undecorated = Footer;
