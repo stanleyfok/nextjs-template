@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
@@ -12,12 +13,18 @@ Router.onRouteChangeStart = () => {
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-const Layout = props => [
-  <Header key="0" imagePath={props.config.paths.images}/>,
-  <div key="1" className="container">
-    {props.children}
-  </div>,
-  <Footer key="2" />,
-];
+const Layout = props => (
+  <div>
+    <Header />
+    <div className="container">
+      {props.children}
+    </div>
+    <Footer />
+  </div>
+);
+
+Layout.propTypes = {
+  children: PropTypes.element,
+};
 
 export default Layout;

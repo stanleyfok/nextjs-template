@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import urljoin from 'url-join';
 import Link from 'next/link';
 
-import withI18N from './withI18N';
+import withI18N from '../hoc/withI18N';
+import withConfig from '../hoc/withConfig';
 
-const Header = ({ imagePath, t }) => (
+const Header = ({ t, config }) => (
   <div className="header">
     <div className="container">
       <Link href="/index" as="/">
-        <a><img src={urljoin(imagePath, 'favicon.png')} /></a>
+        <a><img src={urljoin(config.paths.images, 'favicon.png')} /></a>
       </Link>
       <span>{t('common:header.title')}</span>
     </div>
@@ -18,7 +19,7 @@ const Header = ({ imagePath, t }) => (
 
 Header.propTypes = {
   t: PropTypes.func,
-  imagePath: PropTypes.string,
+  config: PropTypes.object,
 };
 
-export default withI18N(Header);
+export default withI18N(withConfig(Header));
