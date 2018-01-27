@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ConfigProvider from '../providers/ConfigProvider';
-
 import config from '../../configs/config';
 
 const withPage = (Child) => {
@@ -21,12 +20,6 @@ const withPage = (Child) => {
         ...childProps,
         isServer,
       };
-    }
-
-    constructor(props) {
-      super(props);
-
-      //to do
     }
 
     render() {
