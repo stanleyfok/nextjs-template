@@ -266,6 +266,16 @@ I take the approach having the `__tests__` folder in each folders, so unit testi
 
 The library [enzyme](https://www.npmjs.com/package/enzyme) and [enzyme-to-json](https://www.npmjs.com/package/enzyme-to-json) are mainly used to write unit tests
 
+### 💡 Rule: Need to export the undecorated component for every component file to facilitate unit testing
+
+Each react component has to export the undecorated component. For example:
+```js
+export default withI18N(Footer);
+export const undecorated = Footer;
+```
+
+The exported undecorated will be only used for unit testing. This can help us to test a component by passing the required props. [Shallow rendering](https://github.com/airbnb/enzyme/blob/master/docs/api/shallow.md) is used whenever possible.
+
 ### 💡 Rule: API client library has to be mocked
 
 API client library has to be mocked so that unit testing is not related to the real api. It will also speed up the time running your test cases.
