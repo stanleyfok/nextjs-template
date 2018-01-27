@@ -5,6 +5,7 @@ import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
 import Meta from '../components/common/Meta';
+import Error from '../components/common/Error';
 import Show from '../components/content/Show';
 
 import ApiClient from '../lib/api-client';
@@ -27,7 +28,10 @@ class ShowPage extends React.Component {
           title={t('show:meta.title', { name: result.data.name })}
           description={t('show:meta.description')}
         />
-        <Show result={result} />
+        {result.statusCode >= 400
+          ? <Error statusCode={result.statusCode} />
+          : <Show result={result} />
+        }
       </Layout>
     );
   }

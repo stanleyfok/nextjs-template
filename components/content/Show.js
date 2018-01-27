@@ -5,13 +5,8 @@ import urljoin from 'url-join';
 
 import withI18N from '../hoc/withI18N';
 import withConfig from '../hoc/withConfig';
-import Error from '../common/Error';
 
 const Show = ({ config, result }) => {
-  if (result.statusCode >= 400) {
-    return <Error statusCode={result.statusCode} />;
-  }
-
   const image = result.data.image
     ? result.data.image.medium
     : urljoin(config.paths.images, 'placeholder.png');
@@ -46,3 +41,4 @@ Show.propTypes = {
 };
 
 export default withI18N(withConfig(Show), ['show', 'error']);
+export const undecorated = Show;

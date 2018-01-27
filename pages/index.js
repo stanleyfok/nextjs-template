@@ -5,6 +5,7 @@ import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
 import Meta from '../components/common/Meta';
+import Error from '../components/common/Error';
 import Index from '../components/content/Index';
 
 import ApiClient from '../lib/api-client';
@@ -27,7 +28,10 @@ class IndexPage extends React.Component {
           title={t('index:meta.title')}
           description={t('index:meta.description')}
         />
-        <Index result={result} />
+        {result.statusCode >= 400
+          ? <Error statusCode={result.statusCode} />
+          : <Index result={result} />
+        }
       </Layout>
     );
   }
