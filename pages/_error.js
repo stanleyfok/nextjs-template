@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ConfigProvider from '../components/providers/ConfigProvider';
+import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
 import Error from '../components/common/Error';
-
-import config from '../configs/config';
 
 class ErrorPage extends React.Component {
   static getInitialProps({ res, err }) {
@@ -19,11 +17,9 @@ class ErrorPage extends React.Component {
     const { statusCode } = this.props;
 
     return (
-      <ConfigProvider config={config}>
-        <Layout>
-          <Error statusCode={statusCode} />
-        </Layout>
-      </ConfigProvider>
+      <Layout>
+        <Error statusCode={statusCode} />
+      </Layout>
     );
   }
 }
@@ -33,4 +29,4 @@ ErrorPage.propTypes = {
   statusCode: PropTypes.number,
 };
 
-export default withI18N(ErrorPage, ['error']);
+export default withPage(withI18N(ErrorPage, ['error']));

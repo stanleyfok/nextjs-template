@@ -7,13 +7,14 @@ import config from '../../configs/config';
 const withPage = (Child) => {
   class PageComponent extends React.Component {
     static async getInitialProps(ctx) {
-      const { req } = ctx;
+      const newCtx = { ...ctx, config };
+      const { req } = newCtx;
       const isServer = !!req;
 
       let childProps = {};
 
       if (Child.getInitialProps) {
-        childProps = await Child.getInitialProps(ctx);
+        childProps = await Child.getInitialProps(newCtx);
       }
 
       return {
