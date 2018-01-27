@@ -9,7 +9,7 @@ const withI18N = (Child, namespaces = null) => {
       const childProps = await Child.getInitialProps(ctx);
       const i18nProps = i18n.getInitialProps(ctx, namespaces);
 
-      return Object.assign({}, childProps, i18nProps);
+      return { ...childProps, ...i18nProps };
     }
 
     render() {

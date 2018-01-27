@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 const withConfig = (Child) => {
   class ConfigComponent extends Component {
     static async getInitialProps(ctx) {
-      const newCtx = Object.assign({}, ctx);
-      const childProps = await Child.getInitialProps(newCtx);
+      const childProps = await Child.getInitialProps(ctx);
 
       return childProps;
     }
