@@ -6,7 +6,12 @@ import i18n from '../../lib/i18n';
 const withI18N = (Child, namespaces = null) => {
   class I18NComponent extends React.Component {
     static async getInitialProps(ctx) {
-      const childProps = await Child.getInitialProps(ctx);
+      let childProps = {};
+
+      if (Child.getInitialProps) {
+        childProps = await Child.getInitialProps(ctx);
+      }
+
       const i18nProps = i18n.getInitialProps(ctx, namespaces);
 
       return { ...childProps, ...i18nProps };

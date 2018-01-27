@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ConfigProvider from '../components/providers/ConfigProvider';
+import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
 import Show from '../components/content/Show';
@@ -35,4 +36,4 @@ ShowPage.propTypes = {
   result: PropTypes.object,
 };
 
-export default withI18N(ShowPage, ['show']);
+export default withPage(withI18N(ShowPage, ['show']));

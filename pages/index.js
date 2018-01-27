@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ConfigProvider from '../components/providers/ConfigProvider';
+import withPage from '../components/hoc/withPage';
 import withI18N from '../components/hoc/withI18N';
 import Layout from '../components/common/Layout';
 import Index from '../components/content/Index';
@@ -21,11 +21,9 @@ class IndexPage extends React.Component {
     const { result } = this.props;
 
     return (
-      <ConfigProvider config={config}>
-        <Layout>
-          <Index result={result} />
-        </Layout>
-      </ConfigProvider>
+      <Layout>
+        <Index result={result} />
+      </Layout>
     );
   }
 }
@@ -34,4 +32,4 @@ IndexPage.propTypes = {
   result: PropTypes.object,
 };
 
-export default withI18N(IndexPage, ['index']);
+export default withPage(withI18N(IndexPage, ['index']));
