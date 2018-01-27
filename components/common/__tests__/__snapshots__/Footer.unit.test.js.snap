@@ -2,10 +2,10 @@
 
 exports[`<Footer /> should render correctly 1`] = `
 <div
-  class="footer"
+  className="footer"
 >
   <div
-    class="container"
+    className="container"
   >
     common:footer.text
   </div>

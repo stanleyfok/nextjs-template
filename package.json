@@ -16,10 +16,10 @@
     "eslint-fix": "./node_modules/.bin/eslint --fix '**/*.js' '**/*.json'",
     "sasslint": "./node_modules/.bin/sass-lint -v -q",
     "cc": "rm -rf .next node_modules/.cache",
-    "test": "NODE_ENV=test jest",
-    "test-unit": "NODE_ENV=test jest unit",
-    "test-int": "NODE_ENV=test jest int",
-    "test-coverage": "NODE_ENV=test jest --coverage"
+    "test": "npm run cc; NODE_ENV=test jest",
+    "test-unit": "npm run cc; NODE_ENV=test jest unit",
+    "test-int": "npm run cc; NODE_ENV=test jest int",
+    "test-coverage": "npm run cc; NODE_ENV=test jest --coverage"
   },
   "author": "Stanley Fok <stanleyfok@gmail.com> (https://github.com/stanleyfok)",
   "license": "MIT",

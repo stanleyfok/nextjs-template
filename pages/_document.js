@@ -3,7 +3,10 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import urljoin from 'url-join';
 
 import stylesheet from '../assets/styles/bundle.scss';
-import config from '../configs/config';
+import appConfig from '../configs/config';
+import { config as testConfig } from '../lib/testHelper';
+
+const config = (appConfig.env !== 'test') ? appConfig : testConfig;
 
 export default class MyDocument extends Document {
   render() {

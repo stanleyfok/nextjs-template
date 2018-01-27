@@ -1,18 +1,19 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
-import { render } from 'enzyme';
+import { shallow } from 'enzyme';
 
-import Error from '../_error';
+import { undecorated as ErrorPage } from '../_error';
+import { t } from '../../lib/testHelper';
 
-describe('<Error />', () => {
+describe('<ErrorPage />', () => {
   it('getInitialProps should return object with status code', () => {
-    let props = Error.getInitialProps({ res: { statusCode: 404 } });
+    let props = ErrorPage.getInitialProps({ res: { statusCode: 404 } });
     expect(props).toEqual({ statusCode: 404 });
 
-    props = Error.getInitialProps({ err: { statusCode: 404 } });
+    props = ErrorPage.getInitialProps({ err: { statusCode: 404 } });
     expect(props).toEqual({ statusCode: 404 });
 
-    props = Error.getInitialProps({
+    props = ErrorPage.getInitialProps({
       res: { statusCode: 404 },
       err: { statusCode: 500 },
     });
@@ -21,12 +22,12 @@ describe('<Error />', () => {
   });
 
   it('should render correctly without status code', () => {
-    const document = render(<Error />);
-    expect(toJson(document)).toMatchSnapshot();
+    const error = shallow(<ErrorPage t={t} />);
+    expect(toJson(error)).toMatchSnapshot();
   });
 
   it('should render correctly with status code', () => {
-    const document = render(<Error statusCode={404} />);
-    expect(toJson(document)).toMatchSnapshot();
+    const error = shallow(<ErrorPage t={t} statusCode={404} />);
+    expect(toJson(error)).toMatchSnapshot();
   });
 });

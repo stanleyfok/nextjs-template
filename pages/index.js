@@ -9,10 +9,9 @@ import Error from '../components/common/Error';
 import Index from '../components/content/Index';
 
 import ApiClient from '../lib/api-client';
-import config from '../configs/config';
 
 class IndexPage extends React.Component {
-  static async getInitialProps() {
+  static async getInitialProps({ config }) {
     const apiClient = new ApiClient(config.api.baseURL);
     const result = await apiClient.getShows('batman');
 
@@ -43,3 +42,4 @@ IndexPage.propTypes = {
 };
 
 export default withPage(withI18N(IndexPage, ['index']));
+export const undecorated = IndexPage;

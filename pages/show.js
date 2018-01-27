@@ -43,3 +43,4 @@ ShowPage.propTypes = {
 };
 
 export default withPage(withI18N(ShowPage, ['show']));
+export const undecorated = ShowPage;

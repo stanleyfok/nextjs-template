@@ -7,7 +7,7 @@ import { t } from '../../../lib/testHelper';
 
 describe('<Error />', () => {
   it('should render correctly with statusCode', () => {
-    const error = shallow(<Error t={t} statusCode='404' />);
+    const error = shallow(<Error t={t} statusCode={404} />);
     expect(toJson(error)).toMatchSnapshot();
   });
 

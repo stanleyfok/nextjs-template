@@ -1,79 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Error /> should render correctly with status code 1`] = `
-Array [
-  <div
-    class="header"
-  >
-    <div
-      class="container"
-    >
-      <a
-        href="/"
-      >
-        <img
-          src="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
-        />
-      </a>
-      <span>
-        header.title
-      </span>
-    </div>
-  </div>,
-  <div
-    class="container"
-  >
-    <p>
-      An error 404 occurred on server
-    </p>
-  </div>,
-  <div
-    class="footer"
-  >
-    <div
-      class="container"
-    >
-      footer.text
-    </div>
-  </div>,
-]
+exports[`<ErrorPage /> should render correctly with status code 1`] = `
+<Layout>
+  <Meta
+    description="index:meta.description"
+    title="index:meta.title"
+  />
+  <Translate(I18NComponent)
+    statusCode={404}
+  />
+</Layout>
 `;
 
-exports[`<Error /> should render correctly without status code 1`] = `
-Array [
-  <div
-    class="header"
-  >
-    <div
-      class="container"
-    >
-      <a
-        href="/"
-      >
-        <img
-          src="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
-        />
-      </a>
-      <span>
-        header.title
-      </span>
-    </div>
-  </div>,
-  <div
-    class="container"
-  >
-    <p>
-      An error occurred on client
-    </p>
-  </div>,
-  <div
-    class="footer"
-  >
-    <div
-      class="container"
-    >
-      footer.text
-    </div>
-  </div>,
-]
+exports[`<ErrorPage /> should render correctly without status code 1`] = `
+<Layout>
+  <Meta
+    description="index:meta.description"
+    title="index:meta.title"
+  />
+  <Translate(I18NComponent) />
+</Layout>
 `;

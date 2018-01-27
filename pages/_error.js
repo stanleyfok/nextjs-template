@@ -35,3 +35,4 @@ ErrorPage.propTypes = {
 };
 
 export default withPage(withI18N(ErrorPage, ['common', 'error']));
+export const undecorated = ErrorPage;

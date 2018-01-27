@@ -9,7 +9,7 @@ exports[`<Document /> should render correctly 1`] = `
       name="viewport"
     />
     <link
-      href="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
+      href="/static/test/images/favicon.png"
       rel="shortcut icon"
     />
     <link
@@ -19,7 +19,7 @@ exports[`<Document /> should render correctly 1`] = `
       rel="stylesheet"
     />
     <link
-      href="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/styles/bundle.css"
+      href="/static/test/styles/bundle.css"
       rel="stylesheet"
     />
   </Head>

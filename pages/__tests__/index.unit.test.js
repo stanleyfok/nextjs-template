@@ -1,32 +1,30 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
-import { render } from 'enzyme';
+import { shallow } from 'enzyme';
 
-import ApiClient from '../../lib/api-client';
-import Index from '../index';
+import { undecorated as IndexPage } from '../index';
+import { config, t, apiClient } from '../../lib/testHelper';
 
-const apiClient = new ApiClient('.');
-
-describe('<Index />', () => {
+describe('<IndexPage />', () => {
   it('getInitialProps should return object with status code', async () => {
-    const props = await Index.getInitialProps();
+    const props = await IndexPage.getInitialProps({ config });
 
     expect(props).toBeDefined();
-    expect(props.data).toHaveLength(10);
-    expect(props.statusCode).toBe(200);
+    expect(props.result.data).toHaveLength(10);
+    expect(props.result.statusCode).toBe(200);
   });
 
   it('should render correctly with searchable result', async () => {
-    const res = await apiClient.getShows('batman');
+    const result = await apiClient.getShows('batman');
 
-    const index = render(<Index {...res} />);
+    const index = shallow(<IndexPage t={t} result={result} />);
     expect(toJson(index)).toMatchSnapshot();
   });
 
   it('should render correctly with non-searchable result', async () => {
-    const res = await apiClient.getShows('helloword');
+    const result = await apiClient.getShows('helloword');
 
-    const index = render(<Index {...res} />);
+    const index = shallow(<IndexPage t={t} result={result} />);
     expect(toJson(index)).toMatchSnapshot();
   });
 });

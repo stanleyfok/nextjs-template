@@ -1,158 +1,599 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Index /> should render correctly with non-searchable result 1`] = `
-Array [
-  <div
-    class="header"
-  >
-    <div
-      class="container"
-    >
-      <a
-        href="/"
-      >
-        <img
-          src="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
-        />
-      </a>
-      <span>
-        header.title
-      </span>
-    </div>
-  </div>,
-  <div
-    class="container"
-  >
-    <p>
-      An error 404 occurred on server
-    </p>
-  </div>,
-  <div
-    class="footer"
-  >
-    <div
-      class="container"
-    >
-      footer.text
-    </div>
-  </div>,
-]
+exports[`<IndexPage /> should render correctly with non-searchable result 1`] = `
+<Layout>
+  <Meta
+    description="index:meta.description"
+    title="index:meta.title"
+  />
+  <Translate(I18NComponent)
+    statusCode={404}
+  />
+</Layout>
 `;
 
-exports[`<Index /> should render correctly with searchable result 1`] = `
-Array [
-  <div
-    class="header"
-  >
-    <div
-      class="container"
-    >
-      <a
-        href="/"
-      >
-        <img
-          src="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
-        />
-      </a>
-      <span>
-        header.title
-      </span>
-    </div>
-  </div>,
-  <div
-    class="container"
-  >
-    <div
-      class="index"
-    >
-      <h1>
-        content.header
-      </h1>
-      <p>
-        content.subTitle
-      </p>
-      <ul>
-        <li>
-          <a
-            href="/shows/975"
-          >
-            Batman (8.2)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/481"
-          >
-            The Batman (8.3)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/504"
-          >
-            Batman Beyond (9)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/757"
-          >
-            Batman: The Animated Series (9.3)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/11464"
-          >
-            Batman Unlimited (10)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/3557"
-          >
-            Beware the Batman (10)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/33618"
-          >
-            The Adventures of Batman 
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/900"
-          >
-            Batman: The Brave and The Bold (9.4)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/5951"
-          >
-            The New Batman Adventures (8.6)
-          </a>
-        </li>
-        <li>
-          <a
-            href="/shows/22309"
-          >
-            Batman: Black and White 
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>,
-  <div
-    class="footer"
-  >
-    <div
-      class="container"
-    >
-      footer.text
-    </div>
-  </div>,
-]
+exports[`<IndexPage /> should render correctly with searchable result 1`] = `
+<Layout>
+  <Meta
+    description="index:meta.description"
+    title="index:meta.title"
+  />
+  <Translate(I18NComponent)
+    result={
+      Object {
+        "data": Array [
+          Object {
+            "score": 23.186373,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/95649",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/975",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt0059968",
+                "thetvdb": 77871,
+                "tvrage": 2719,
+              },
+              "genres": Array [
+                "Comedy",
+                "Action",
+                "Children",
+                "Crime",
+                "Science-Fiction",
+              ],
+              "id": 975,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg",
+              },
+              "language": "English",
+              "name": "Batman",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 3,
+                "name": "ABC",
+              },
+              "officialSite": null,
+              "premiered": "1966-01-12",
+              "rating": Object {
+                "average": 8.2,
+              },
+              "runtime": 30,
+              "schedule": Object {
+                "days": Array [
+                  "Thursday",
+                ],
+                "time": "19:30",
+              },
+              "status": "Ended",
+              "summary": "<p>Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.</p>",
+              "type": "Scripted",
+              "updated": 1512931633,
+              "url": "http://www.tvmaze.com/shows/975/batman",
+              "webChannel": null,
+              "weight": 79,
+            },
+          },
+          Object {
+            "score": 20.942436,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/43721",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/481",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt0398417",
+                "thetvdb": 73180,
+                "tvrage": 5602,
+              },
+              "genres": Array [
+                "Action",
+                "Adventure",
+                "Children",
+                "Science-Fiction",
+              ],
+              "id": 481,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/3/9370.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/3/9370.jpg",
+              },
+              "language": "English",
+              "name": "The Batman",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 5,
+                "name": "The CW",
+              },
+              "officialSite": null,
+              "premiered": "2004-09-11",
+              "rating": Object {
+                "average": 8.3,
+              },
+              "runtime": 30,
+              "schedule": Object {
+                "days": Array [
+                  "Saturday",
+                ],
+                "time": "10:30",
+              },
+              "status": "Ended",
+              "summary": "<p>Hidden in the shadows, The Batman casts a protective eye while tracking the thugs, thieves and criminal masterminds that claim Gotham City's dark alleys each night. In one magnificent swoop, he descends up on opponents and battles with a fierceness that seems almost inhuman. This is the young Bruce Wayne who assumes the role of Gotham's greatest defender in a fresh retelling of the Dark Knight's beginnings.</p><p>With incredible gadgets, awesome animation and a cool new vibe, these 13 exciting episodes from the hit series showcase The Batman taking on your favourite villains – The Joker, The Penguin, Mr. Freeze, Catwoman, Bane – and new crazies you'll love to hate!</p>",
+              "type": "Animation",
+              "updated": 1504829112,
+              "url": "http://www.tvmaze.com/shows/481/the-batman",
+              "webChannel": null,
+              "weight": 0,
+            },
+          },
+          Object {
+            "score": 14.489493,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/45957",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/504",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt0147746",
+                "thetvdb": 75417,
+                "tvrage": 2722,
+              },
+              "genres": Array [
+                "Action",
+                "Adventure",
+                "Science-Fiction",
+              ],
+              "id": 504,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/4/10842.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/4/10842.jpg",
+              },
+              "language": "English",
+              "name": "Batman Beyond",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 71,
+                "name": "The WB",
+              },
+              "officialSite": null,
+              "premiered": "1999-01-10",
+              "rating": Object {
+                "average": 9,
+              },
+              "runtime": 30,
+              "schedule": Object {
+                "days": Array [
+                  "Saturday",
+                ],
+                "time": "",
+              },
+              "status": "Ended",
+              "summary": "<p><b>Batman Beyond</b> tells the story of Terry McGinnis was just an ordinary teenager...until his father was mysteriously murdered. Suspecting foul play at his father's company Wayne/Powers Corporation, Terry meets Bruce Wayne and learns a secret identity hidden for decades. Now too old to battle injustice, Wayne is a bitter shell of his former self and refuses to help. So Terry does what any brash young kid would do: steal the Batsuit and take matters into his own hands! Vowing to avenge his father's death, Terry dons the high-tech suit - tricked out with jetpacks for flying, a supersensitive microphone for eavesdropping and even camouflage capabilities - in search of his father's assassin.</p>",
+              "type": "Animation",
+              "updated": 1504830559,
+              "url": "http://www.tvmaze.com/shows/504/batman-beyond",
+              "webChannel": null,
+              "weight": 74,
+            },
+          },
+          Object {
+            "score": 12.106233,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/66866",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/757",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt0103359",
+                "thetvdb": 76168,
+                "tvrage": 2721,
+              },
+              "genres": Array [
+                "Action",
+                "Adventure",
+                "Science-Fiction",
+              ],
+              "id": 757,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/15229.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/15229.jpg",
+              },
+              "language": "English",
+              "name": "Batman: The Animated Series",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 4,
+                "name": "FOX",
+              },
+              "officialSite": null,
+              "premiered": "1992-09-05",
+              "rating": Object {
+                "average": 9.3,
+              },
+              "runtime": 30,
+              "schedule": Object {
+                "days": Array [
+                  "Saturday",
+                ],
+                "time": "10:00",
+              },
+              "status": "Ended",
+              "summary": "<p>Experience the thrills of vigilante justice as millionaire playboy Bruce Wayne and alter-ego Batman protect the streets of Gotham City from a host of villains including archnemesis The Joker, deadly-beautiful Poison Ivy and primitive Killer Croc in a fresh take on super hero storytelling. Intelligent, dramatic stories, unique characters and sharp dialog shaped this edgy TV series into an Emmy®-winning powerhouse that brought the Caped Crusader out of the dark alleys of TV history and into the present for fans of all ages.</p>",
+              "type": "Animation",
+              "updated": 1508227457,
+              "url": "http://www.tvmaze.com/shows/757/batman-the-animated-series",
+              "webChannel": null,
+              "weight": 88,
+            },
+          },
+          Object {
+            "score": 11.898953,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/896355",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/11464",
+                },
+              },
+              "externals": Object {
+                "imdb": null,
+                "thetvdb": 301558,
+                "tvrage": null,
+              },
+              "genres": Array [
+                "Action",
+                "Children",
+                "Science-Fiction",
+              ],
+              "id": 11464,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/38/96515.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/38/96515.jpg",
+              },
+              "language": "English",
+              "name": "Batman Unlimited",
+              "network": null,
+              "officialSite": "https://www.youtube.com/channel/UCyu8StPfZWapR6rfW_JgqcA",
+              "premiered": "2015-05-04",
+              "rating": Object {
+                "average": 10,
+              },
+              "runtime": 4,
+              "schedule": Object {
+                "days": Array [],
+                "time": "",
+              },
+              "status": "Running",
+              "summary": "<p>A webseries began airing on DC Kids' YouTube channel on May 4, 2015.</p>",
+              "type": "Animation",
+              "updated": 1494693170,
+              "url": "http://www.tvmaze.com/shows/11464/batman-unlimited",
+              "webChannel": Object {
+                "country": null,
+                "id": 21,
+                "name": "YouTube",
+              },
+              "weight": 2,
+            },
+          },
+          Object {
+            "score": 11.680949,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/232900",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/3557",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt2329077",
+                "thetvdb": 258331,
+                "tvrage": 30092,
+              },
+              "genres": Array [
+                "Action",
+                "Adventure",
+                "Science-Fiction",
+              ],
+              "id": 3557,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/18/46698.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/18/46698.jpg",
+              },
+              "language": "English",
+              "name": "Beware the Batman",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 11,
+                "name": "Cartoon Network",
+              },
+              "officialSite": null,
+              "premiered": "2013-07-13",
+              "rating": Object {
+                "average": 10,
+              },
+              "runtime": 30,
+              "schedule": Object {
+                "days": Array [
+                  "Sunday",
+                ],
+                "time": "02:30",
+              },
+              "status": "Ended",
+              "summary": "<p>In this new interpretation of the Batman legend, Bruce Wayne has recently returned to Gotham. With the aide of his butler and former SAS operative Alfred Pennyworth, Bruce takes on the guise of Batman and fights the villains of Gotham City. Helping him is Katana, a young martial artist who Alfred hires to assist Bruce when he realizes that he's too old to serve in the field.</p>",
+              "type": "Animation",
+              "updated": 1502146987,
+              "url": "http://www.tvmaze.com/shows/3557/beware-the-batman",
+              "webChannel": null,
+              "weight": 0,
+            },
+          },
+          Object {
+            "score": 11.600732,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/1364486",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/33618",
+                },
+              },
+              "externals": Object {
+                "imdb": null,
+                "thetvdb": 248509,
+                "tvrage": null,
+              },
+              "genres": Array [
+                "Action",
+                "Adventure",
+              ],
+              "id": 33618,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/136/342479.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/136/342479.jpg",
+              },
+              "language": "English",
+              "name": "The Adventures of Batman",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 2,
+                "name": "CBS",
+              },
+              "officialSite": null,
+              "premiered": "1968-09-14",
+              "rating": Object {
+                "average": null,
+              },
+              "runtime": 15,
+              "schedule": Object {
+                "days": Array [
+                  "Saturday",
+                ],
+                "time": "10:30",
+              },
+              "status": "Ended",
+              "summary": "<p><b>The Adventures of Batman</b>, with Robin, the Boy Wonder! Batman and Robin, the Dynamic Duo against crime and corruption, whose real identities as millionaire philanthropist Bruce Wayne and his young ward Dick Grayson and known only to Alfred, the faithful butler. Ever alert, they respond swiftly to a signal from the police, and moments later, from the secret Batcave deep beneath Wayne Manor, they roar out to protect life, limb and property as Batman and Robin, caped crimefighters! Batman and Robin, scourge of Gotham City's kooky criminals: The Joker, Clown Prince of Crime - The Penguin, pudgy purveyor of perfidy - and the cool, cruel, Mr. Freeze! Watch out, villains, here come... Batman and Robin!</p>",
+              "type": "Animation",
+              "updated": 1512083956,
+              "url": "http://www.tvmaze.com/shows/33618/the-adventures-of-batman",
+              "webChannel": null,
+              "weight": 0,
+            },
+          },
+          Object {
+            "score": 10.615445,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/83060",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/900",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt1213218",
+                "thetvdb": 82824,
+                "tvrage": 20349,
+              },
+              "genres": Array [
+                "Action",
+                "Crime",
+                "Science-Fiction",
+              ],
+              "id": 900,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/16001.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/16001.jpg",
+              },
+              "language": "English",
+              "name": "Batman: The Brave and The Bold",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 11,
+                "name": "Cartoon Network",
+              },
+              "officialSite": null,
+              "premiered": "2008-11-13",
+              "rating": Object {
+                "average": 9.4,
+              },
+              "runtime": 30,
+              "schedule": Object {
+                "days": Array [
+                  "Friday",
+                ],
+                "time": "19:00",
+              },
+              "status": "Ended",
+              "summary": "<p>Batman isn't going at it alone this time! From Warner Bros. Animation comes the latest interpretation of the classic Batman franchise. Our caped crusader is teamed up with heroes from across the DC Universe, delivering nonstop action and adventure with a touch of comic relief. Blue Beetle, Green Arrow, Aquaman and countless others will get a chance to uphold justice alongside Batman. Though still based in Gotham, Batman will frequently find himself outside city limits, facing situations that are both unfamiliar and exhilarating. With formidable foes around every corner, Batman will still rely on his stealth, resourcefulness and limitless supply of cool gadgets to bring justice home.</p>",
+              "type": "Animation",
+              "updated": 1492673405,
+              "url": "http://www.tvmaze.com/shows/900/batman-the-brave-and-the-bold",
+              "webChannel": null,
+              "weight": 75,
+            },
+          },
+          Object {
+            "score": 9.735396,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/355338",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/5951",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt0118266",
+                "thetvdb": 77084,
+                "tvrage": 2720,
+              },
+              "genres": Array [
+                "Science-Fiction",
+              ],
+              "id": 5951,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/23/58624.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/23/58624.jpg",
+              },
+              "language": "English",
+              "name": "The New Batman Adventures",
+              "network": Object {
+                "country": Object {
+                  "code": "US",
+                  "name": "United States",
+                  "timezone": "America/New_York",
+                },
+                "id": 71,
+                "name": "The WB",
+              },
+              "officialSite": null,
+              "premiered": "1997-09-13",
+              "rating": Object {
+                "average": 8.6,
+              },
+              "runtime": null,
+              "schedule": Object {
+                "days": Array [],
+                "time": "",
+              },
+              "status": "Ended",
+              "summary": "<p>The New Batman Adventures comes from the creators of Batman and Superman. This series was created because Fox had not lived up to the contract that they had given Batman, so the WB decided to give the show another chance. Bruce Timm then went back and decided to re-design all of the characters from Batman and ended up revamping the series all-together.</p><p>(Source: animeflavor)</p>",
+              "type": "Animation",
+              "updated": 1494693177,
+              "url": "http://www.tvmaze.com/shows/5951/the-new-batman-adventures",
+              "webChannel": null,
+              "weight": 45,
+            },
+          },
+          Object {
+            "score": 9.735396,
+            "show": Object {
+              "_links": Object {
+                "previousepisode": Object {
+                  "href": "http://api.tvmaze.com/episodes/970807",
+                },
+                "self": Object {
+                  "href": "http://api.tvmaze.com/shows/22309",
+                },
+              },
+              "externals": Object {
+                "imdb": "tt1458796",
+                "thetvdb": null,
+                "tvrage": null,
+              },
+              "genres": Array [
+                "Action",
+                "Adventure",
+                "Science-Fiction",
+              ],
+              "id": 22309,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/81/204143.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/original_untouched/81/204143.jpg",
+              },
+              "language": "English",
+              "name": "Batman: Black and White",
+              "network": null,
+              "officialSite": null,
+              "premiered": "2008-12-08",
+              "rating": Object {
+                "average": null,
+              },
+              "runtime": null,
+              "schedule": Object {
+                "days": Array [
+                  "Thursday",
+                ],
+                "time": "",
+              },
+              "status": "Ended",
+              "summary": "<p>This collection includes animated adaptations of ten short stories, bundled into five episodes, that take place in and around Gotham City, featuring Batman and his nefarious villains. Each story comes from the unique perspective of different writers and artists, applying their spin on the Batman universe.</p>",
+              "type": "Animation",
+              "updated": 1494693250,
+              "url": "http://www.tvmaze.com/shows/22309/batman-black-and-white",
+              "webChannel": Object {
+                "country": null,
+                "id": 3,
+                "name": "Amazon Prime",
+              },
+              "weight": 18,
+            },
+          },
+        ],
+        "statusCode": 200,
+      }
+    }
+  />
+</Layout>
 `;

@@ -1,118 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Show /> should render correctly with non-searchable result 1`] = `
-Array [
-  <div
-    class="header"
-  >
-    <div
-      class="container"
-    >
-      <a
-        href="/"
-      >
-        <img
-          src="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
-        />
-      </a>
-      <span>
-        header.title
-      </span>
-    </div>
-  </div>,
-  <div
-    class="container"
-  >
-    <p>
-      An error 404 occurred on server
-    </p>
-  </div>,
-  <div
-    class="footer"
-  >
-    <div
-      class="container"
-    >
-      footer.text
-    </div>
-  </div>,
-]
+exports[`<ShowPage /> should render correctly with non-searchable result 1`] = `
+<Layout>
+  <Meta
+    description="show:meta.description"
+    title="show:meta.title"
+  />
+  <Translate(I18NComponent)
+    statusCode={404}
+  />
+</Layout>
 `;
 
-exports[`<Show /> should render correctly with searchable result 1`] = `
-Array [
-  <div
-    class="header"
-  >
-    <div
-      class="container"
-    >
-      <a
-        href="/"
-      >
-        <img
-          src="undefined/static/47cd76e43f74bbc2e1baaf194d07e1fa/images/favicon.png"
-        />
-      </a>
-      <span>
-        header.title
-      </span>
-    </div>
-  </div>,
-  <div
-    class="container"
-  >
-    <div
-      class="show"
-    >
-      <h1>
-        Batman
-      </h1>
-      <div
-        class="row"
-      >
-        <div
-          class="col-md-3"
-        >
-          <img
-            class="img-fluid"
-            src="http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg"
-          />
-        </div>
-        <div
-          class="col-md-9"
-        >
-          <div>
-            <p>
-              Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="row text-center"
-      >
-        <div
-          class="col-md-12"
-        >
-          <a
-            class="btn btn-primary"
-            href="/"
-          >
-            Back
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <div
-    class="footer"
-  >
-    <div
-      class="container"
-    >
-      footer.text
-    </div>
-  </div>,
-]
+exports[`<ShowPage /> should render correctly with searchable result 1`] = `
+<Layout>
+  <Meta
+    description="show:meta.description"
+    title="show:meta.title"
+  />
+  <Translate(I18NComponent)
+    result={
+      Object {
+        "data": Object {
+          "_links": Object {
+            "previousepisode": Object {
+              "href": "http://api.tvmaze.com/episodes/95649",
+            },
+            "self": Object {
+              "href": "http://api.tvmaze.com/shows/975",
+            },
+          },
+          "externals": Object {
+            "imdb": "tt0059968",
+            "thetvdb": 77871,
+            "tvrage": 2719,
+          },
+          "genres": Array [
+            "Comedy",
+            "Action",
+            "Children",
+            "Crime",
+            "Science-Fiction",
+          ],
+          "id": 975,
+          "image": Object {
+            "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg",
+            "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg",
+          },
+          "language": "English",
+          "name": "Batman",
+          "network": Object {
+            "country": Object {
+              "code": "US",
+              "name": "United States",
+              "timezone": "America/New_York",
+            },
+            "id": 3,
+            "name": "ABC",
+          },
+          "officialSite": null,
+          "premiered": "1966-01-12",
+          "rating": Object {
+            "average": 8.2,
+          },
+          "runtime": 30,
+          "schedule": Object {
+            "days": Array [
+              "Thursday",
+            ],
+            "time": "19:30",
+          },
+          "status": "Ended",
+          "summary": "<p>Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.</p>",
+          "type": "Scripted",
+          "updated": 1512931633,
+          "url": "http://www.tvmaze.com/shows/975/batman",
+          "webChannel": null,
+          "weight": 79,
+        },
+        "statusCode": 200,
+      }
+    }
+  />
+</Layout>
 `;
