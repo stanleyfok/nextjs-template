@@ -11,7 +11,7 @@ describe('<IndexPage />', () => {
 
     expect(props).toBeDefined();
     expect(props.result.data).toHaveLength(10);
-    expect(props.result.statusCode).toBe(200);
+    expect(props.result.statusCode).toEqual(200);
   });
 
   it('should render correctly with searchable result', async () => {

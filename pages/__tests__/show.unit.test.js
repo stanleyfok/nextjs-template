@@ -11,15 +11,15 @@ describe('<ShowPage />', () => {
 
     expect(props).toBeDefined();
     expect(props).toBeDefined();
-    expect(props.result.statusCode).toBe(200);
-    expect(props.result.data.id).toBe(975);
+    expect(props.result.statusCode).toEqual(200);
+    expect(props.result.data.id).toEqual(975);
 
     props = await ShowPage.getInitialProps({ query: { id: '123456789' }, config });
 
     expect(props).toBeDefined();
     expect(props).toBeDefined();
     expect(props).toBeDefined();
-    expect(props.result.statusCode).toBe(404);
+    expect(props.result.statusCode).toEqual(404);
   });
 
   it('should render correctly with searchable result', async () => {
