@@ -1,7 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-
-import withI18N from "components/hoc/withI18N";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const ErrorView = ({ message }) => (
   <div className="error">
@@ -10,7 +8,7 @@ const ErrorView = ({ message }) => (
 );
 
 ErrorView.propTypes = {
-  message: PropTypes.string
+  message: PropTypes.string,
 };
 
 export default ErrorView;

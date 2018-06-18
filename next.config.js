@@ -49,24 +49,7 @@ module.exports = {
     });
 
     config.module.rules.push({
-      test: /\.(jpg|png)$/,
-      use: [
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: dev
-              ? `/static/${envConfig.VERSION_HASH}/webpack/[name]-[hash].[ext]`
-              : `/static/${envConfig.VERSION_HASH}/webpack/[hash].[ext]`,
-            outputPath: dev ? path.join(__dirname, '/') : undefined,
-            publicPath: url => url,
-          },
-        },
-      ],
-    });
-
-    config.module.rules.push({
-      test: /\.(svg|mp4|ico)$/,
+      test: /\.(png|svg|mp4|ico)$/,
       use: [
         {
           loader: 'file-loader',

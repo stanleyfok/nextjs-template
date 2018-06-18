@@ -4,12 +4,8 @@ import Head from 'next/head';
 
 const Meta = props => (
   <Head>
-    {props.title ?
-      <title>{props.title}</title> : ''
-    }
-    {props.description ?
-      <meta name="description" content={props.description} /> : ''
-    }
+    {props.title ? <title>{props.title}</title> : ''}
+    {props.description ? <meta name="description" content={props.description} /> : ''}
   </Head>
 );
 

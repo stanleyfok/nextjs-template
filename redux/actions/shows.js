@@ -1,28 +1,28 @@
-import ApiClient from "../../lib/api-client";
+import ApiClient from '../../lib/api-client';
 
-export const SHOWS_IS_LOADING = "SHOWS_IS_LOADING";
-export const SHOWS_FETCH_DATA_SUCCESS = "SHOWS_FETCH_DATA_SUCCESS";
-export const SHOWS_FETCH_DATA_ERROR = "SHOWS_FETCH_DATA_ERROR";
+export const SHOWS_IS_LOADING = 'SHOWS_IS_LOADING';
+export const SHOWS_FETCH_DATA_SUCCESS = 'SHOWS_FETCH_DATA_SUCCESS';
+export const SHOWS_FETCH_DATA_ERROR = 'SHOWS_FETCH_DATA_ERROR';
 
 export const showsIsLoading = bool => ({
   type: SHOWS_IS_LOADING,
-  isLoading: bool
+  isLoading: bool,
 });
 
 export const showsFetchDataSuccess = shows => ({
   type: SHOWS_FETCH_DATA_SUCCESS,
   shows,
   isLoading: false,
-  error: null
+  error: null,
 });
 
 export const showsFetchDataError = error => ({
   type: SHOWS_FETCH_DATA_ERROR,
   isLoading: false,
-  error
+  error,
 });
 
-export const showsFetchData = keyword => async dispatch => {
+export const showsFetchData = keyword => async (dispatch) => {
   dispatch(showsIsLoading(true));
 
   try {

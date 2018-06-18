@@ -36,15 +36,28 @@ i18n
         .prepare()
         .then(() => {
           const server = express();
+          const router = express.Router();
+
+          router
+            .use(express.static('static', {
+              maxage: '30d',
+              setHeaders: (res) => {
+                res.set({
+                  // you can customize the headers for static assets
+                  'Access-Control-Allow-Origin': '*',
+                });
+              },
+            }))
+            .use(handler);
 
           // enable middleware for i18next
-          server
-            .use(i18nextMiddleware.handle(i18n))
-            .use(compression())
-            .use(handler);
+          server.use(i18nextMiddleware.handle(i18n)).use(compression());
 
           // health check, optional, depending on your monitoring setup
           server.get('/health', (req, res) => res.send('ok'));
+
+          // mount router to server
+          server.use('/', router);
 
           server.listen(envConfig.PORT, (err) => {
             if (err) throw err;

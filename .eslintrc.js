@@ -1,5 +1,3 @@
-const alias = require('./alias.json');
-
 module.exports = {
   parser: 'babel-eslint',
   parserOptions: {

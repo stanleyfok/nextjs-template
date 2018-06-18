@@ -6,10 +6,10 @@ This project template is actually a simple universal webapp with 2 screens. I ho
 
 ## Highlights
 
-- a project skeleton on [Nextjs](https://github.com/zeit/next.js/) SSR supported React framework
+- a project skeleton on [Next.js](https://github.com/zeit/next.js/) SSR supported React framework
 - with eslint setup with rules from airbnb-base and react/recommended
-- integrated with express.js
-- use redux architecture
+- integrated with express, with i18n and compression middlewares
+- demonstrate using redux in Next.js
 - use [axios](https://www.npmjs.com/package/axios) for HTTP client
 - use [next-route](https://www.npmjs.com/package/next-routes) for dynamic routes
 - use of scss and bootstrap

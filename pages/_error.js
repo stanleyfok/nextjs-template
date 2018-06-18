@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import withPage from "components/hoc/withPage";
-import Layout from "components/layout/Layout";
-import Meta from "components/layout/Meta";
-import ErrorView from "components/common/ErrorView";
+import withPage from 'components/hoc/withPage';
+import Layout from 'components/layout/Layout';
+import Meta from 'components/layout/Meta';
+import ErrorView from 'components/common/ErrorView';
 
 class ErrorPage extends React.Component {
   static getInitialProps({ res, err }) {
@@ -18,11 +18,8 @@ class ErrorPage extends React.Component {
 
     return (
       <Layout>
-        <Meta
-          title={t("error:meta.title")}
-          description={t("error:meta.description")}
-        />
-        <ErrorView message={t("error:message", { statusCode })} />
+        <Meta title={t('error:meta.title')} description={t('error:meta.description')} />
+        <ErrorView message={t('error:message', { statusCode })} />
       </Layout>
     );
   }
@@ -30,11 +27,11 @@ class ErrorPage extends React.Component {
 
 ErrorPage.propTypes = {
   t: PropTypes.func,
-  statusCode: PropTypes.number
+  statusCode: PropTypes.number,
 };
 
 export default withPage(ErrorPage, {
-  i18n: { namespaces: ["common", "error"] }
+  i18n: { namespaces: ['common', 'error'] },
 });
 
 export const undecorated = ErrorPage;
