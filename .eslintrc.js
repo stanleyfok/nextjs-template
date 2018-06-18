@@ -1,4 +1,4 @@
-const alias = require('./alias');
+const alias = require('./alias.json');
 
 module.exports = {
   parser: 'babel-eslint',
@@ -21,7 +21,17 @@ module.exports = {
   extends: ['airbnb-base', 'plugin:react/recommended'],
   settings: {
     'import/resolver': {
-      'babel-module': alias,
+      'babel-module': {
+        root: ['./'],
+        alias: {
+          actions: './redux/actions',
+          assets: './assets',
+          components: './components',
+          configs: './configs',
+          lib: './lib',
+          reducers: './redux/reducers',
+        },
+      },
     },
   },
 };

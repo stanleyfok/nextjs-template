@@ -8,7 +8,7 @@ import Meta from 'components/layout/Meta';
 // import Error from 'components/common/Error';
 import Index from 'components/content/Index';
 
-import { showsFetchData } from '../redux/actions/shows';
+import { showsFetchData } from 'actions/shows';
 
 class IndexPage extends React.Component {
   static async getInitialProps({ store }) {

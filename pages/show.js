@@ -8,7 +8,7 @@ import Meta from 'components/layout/Meta';
 // import Error from 'components/common/Error';
 import Show from 'components/content/Show';
 
-import { showFetchData } from '../redux/actions/show';
+import { showFetchData } from 'actions/show';
 
 class ShowPage extends React.Component {
   static async getInitialProps({ query, store }) {
