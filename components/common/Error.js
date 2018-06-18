@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import withI18N from '../hoc/withI18N';
+import withI18N from 'components/hoc/withI18N';
 
 const Error = ({ t, statusCode }) => (
   <div className="error">
     <p>
       {statusCode
         ? t('error:content.withStatusCode', { statusCode })
-        : t('error:content.withoutStatusCode')
-      }
+        : t('error:content.withoutStatusCode')}
     </p>
   </div>
 );

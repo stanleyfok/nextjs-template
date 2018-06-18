@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import urljoin from 'url-join';
 import Link from 'next/link';
 
-import withI18N from '../hoc/withI18N';
-import withConfig from '../hoc/withConfig';
+import favIcon from 'assets/images/favicon.png';
+import withI18N from 'components/hoc/withI18N';
 
-const Header = ({ t, config }) => (
+const Header = ({ t }) => (
   <div className="header">
     <div className="container">
       <Link href="/index" as="/">
-        <a><img src={urljoin(config.paths.images, 'favicon.png')} /></a>
+        <a>
+          <img src={favIcon} />
+        </a>
       </Link>
       <span>{t('common:header.title')}</span>
     </div>
@@ -22,5 +23,5 @@ Header.propTypes = {
   config: PropTypes.object,
 };
 
-export default withI18N(withConfig(Header));
+export default withI18N(Header);
 export const undecorated = Header;

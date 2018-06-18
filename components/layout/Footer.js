@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import withI18N from '../hoc/withI18N';
+import withI18N from 'components/hoc/withI18N';
 
 const Footer = ({ t }) => (
   <div className="footer">
-    <div className="container">
-      {t('common:footer.text')}
-    </div>
+    <div className="container">{t('common:footer.text')}</div>
   </div>
 );
 

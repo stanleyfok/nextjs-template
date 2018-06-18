@@ -1,45 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 
-import withPage from '../components/hoc/withPage';
-import withI18N from '../components/hoc/withI18N';
-import Layout from '../components/common/Layout';
-import Meta from '../components/common/Meta';
-import Error from '../components/common/Error';
-import Index from '../components/content/Index';
+import withPage from 'components/hoc/withPage';
+import Layout from 'components/layout/Layout';
+import Meta from 'components/layout/Meta';
+// import Error from 'components/common/Error';
+import Index from 'components/content/Index';
 
-import ApiClient from '../lib/api-client';
+import { showsFetchData } from '../redux/actions/shows';
 
 class IndexPage extends React.Component {
-  static async getInitialProps({ config }) {
-    const apiClient = new ApiClient(config.api.baseURL);
-    const result = await apiClient.getShows('batman');
+  static async getInitialProps({ store }) {
+    await store.dispatch(showsFetchData('batman'));
 
-    return { result };
+    return {};
   }
 
   render() {
-    const { t, result } = this.props;
+    const { t, shows } = this.props;
 
     return (
       <Layout>
-        <Meta
-          title={t('index:meta.title')}
-          description={t('index:meta.description')}
-        />
-        {result.statusCode >= 400
-          ? <Error statusCode={result.statusCode} />
-          : <Index result={result} />
-        }
+        <Meta title={t('index:meta.title')} description={t('index:meta.description')} />
+        <Index shows={shows} />
       </Layout>
     );
   }
 }
 
 IndexPage.propTypes = {
-  result: PropTypes.object,
+  isServer: PropTypes.bool,
+  showsFetchData: PropTypes.func,
+  shows: PropTypes.array,
   t: PropTypes.func,
 };
 
-export default withPage(withI18N(IndexPage, ['index']));
+const mapStateToProps = state => ({
+  shows: state.shows,
+  showsIsLoading: state.showsIsLoading,
+});
+
+const mapDispatchToProps = dispatch => ({
+  showsFetchData: bindActionCreators(showsFetchData, dispatch),
+});
+
+export default withPage(IndexPage, {
+  i18n: { namespaces: ['index'] },
+  redux: {
+    mapStateToProps,
+    mapDispatchToProps,
+  },
+});
+
 export const undecorated = IndexPage;

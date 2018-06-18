@@ -1,9 +1,9 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 
-import i18nHelper from '../../lib/i18nHelper';
-import config from '../../configs/config';
-import i18nConfig from '../../configs/i18n';
+import i18nHelper from 'lib/i18nHelper';
+import config from 'configs/config';
+import i18nConfig from 'configs/i18n';
 
 const withI18N = (Child, namespaces = null) => {
   const i18n = i18nHelper(config.paths.locales, i18nConfig);

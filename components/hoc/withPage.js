@@ -1,9 +1,17 @@
 import React from 'react';
+import withRedux from 'next-redux-wrapper';
+import config from 'configs/config';
 
-import ConfigProvider from '../providers/ConfigProvider';
-import config from '../../configs/config';
+import configureStore from '../../redux/store/configureStore';
 
-const withPage = (Child) => {
+import withI18N from './withI18N';
+
+const defaultOptions = {
+  i18n: {},
+  redux: {},
+};
+
+const withPage = (Child, options) => {
   class PageComponent extends React.Component {
     static async getInitialProps(ctx) {
       const newCtx = { ...ctx, config };
@@ -23,17 +31,17 @@ const withPage = (Child) => {
     }
 
     render() {
-      return (
-        <div>
-          <ConfigProvider config={config}>
-            <Child {...this.props} />
-          </ConfigProvider>
-        </div>
-      );
+      return <Child {...this.props} />;
     }
   }
 
-  return PageComponent;
+  const newOptions = Object.assign({}, defaultOptions, options);
+
+  if (!newOptions.redux.createStore) {
+    newOptions.redux.createStore = configureStore;
+  }
+
+  return withRedux(newOptions.redux)(withI18N(PageComponent, newOptions.i18n.namespaces));
 };
 
 export default withPage;

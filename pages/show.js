@@ -1,46 +1,62 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 
-import withPage from '../components/hoc/withPage';
-import withI18N from '../components/hoc/withI18N';
-import Layout from '../components/common/Layout';
-import Meta from '../components/common/Meta';
-import Error from '../components/common/Error';
-import Show from '../components/content/Show';
+import withPage from 'components/hoc/withPage';
+import Layout from 'components/layout/Layout';
+import Meta from 'components/layout/Meta';
+// import Error from 'components/common/Error';
+import Show from 'components/content/Show';
 
-import ApiClient from '../lib/api-client';
+import { showFetchData } from '../redux/actions/show';
 
 class ShowPage extends React.Component {
-  static async getInitialProps({ query, config }) {
+  static async getInitialProps({ query, store }) {
     const { id } = query;
-    const apiClient = new ApiClient(config.api.baseURL);
-    const result = await apiClient.getShow(id);
 
-    return { result };
+    await store.dispatch(showFetchData(id));
+
+    return {};
   }
 
   render() {
-    const { t, result } = this.props;
+    const { t, show } = this.props;
 
     return (
       <Layout>
         <Meta
-          title={t('show:meta.title', { name: result.data.name })}
+          title={t('show:meta.title', { name: show.name || '' })}
           description={t('show:meta.description')}
         />
-        {result.statusCode >= 400
-          ? <Error statusCode={result.statusCode} />
-          : <Show result={result} />
-        }
+        <Show show={show} />
       </Layout>
     );
   }
 }
 
 ShowPage.propTypes = {
-  result: PropTypes.object,
+  isServer: PropTypes.bool,
+  showFetchData: PropTypes.func,
+  showId: PropTypes.string,
+  show: PropTypes.object,
   t: PropTypes.func,
 };
 
-export default withPage(withI18N(ShowPage, ['show']));
+const mapStateToProps = state => ({
+  show: state.show,
+  showIsLoading: state.showIsLoading,
+});
+
+const mapDispatchToProps = dispatch => ({
+  showFetchData: bindActionCreators(showFetchData, dispatch),
+});
+
+export default withPage(ShowPage, {
+  i18n: { namespaces: ['show'] },
+  redux: {
+    mapStateToProps,
+    mapDispatchToProps,
+  },
+});
+
 export const undecorated = ShowPage;

@@ -4,8 +4,6 @@ export default {
   versionHash: VERSION_HASH,
   paths: {
     static: `${ASSET_PREFIX}/static/${VERSION_HASH}`,
-    styles: `${ASSET_PREFIX}/static/${VERSION_HASH}/styles`,
-    images: `${ASSET_PREFIX}/static/${VERSION_HASH}/images`,
     locales: `${ASSET_PREFIX}/static/${VERSION_HASH}/locales`,
   },
   api: {

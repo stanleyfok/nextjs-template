@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "codemetrics.basics.EnabledForJSX": false
+}
