@@ -1,27 +1,37 @@
-import ApiClient from 'lib/api-client';
+import ApiClient from "lib/api-client";
 
-const apiClient = new ApiClient();
-
-export const showHasErrored = bool => ({
-  type: 'SHOW_HAS_ERRORED',
-  hasErrored: bool,
-});
+export const SHOW_IS_LOADING = "SHOW_IS_LOADING";
+export const SHOW_FETCH_DATA_SUCCESS = "SHOW_FETCH_DATA_SUCCESS";
+export const SHOW_FETCH_DATA_ERROR = "SHOW_FETCH_DATA_ERROR";
 
 export const showIsLoading = bool => ({
-  type: 'SHOW_IS_LOADING',
-  isLoading: bool,
+  type: SHOW_IS_LOADING,
+  isLoading: bool
 });
 
 export const showFetchDataSuccess = show => ({
-  type: 'SHOW_FETCH_DATA_SUCCESS',
+  type: SHOW_FETCH_DATA_SUCCESS,
   show,
+  isLoading: false,
+  error: null
 });
 
-export const showFetchData = id => (dispatch) => {
+export const showFetchDataError = error => ({
+  type: SHOW_FETCH_DATA_ERROR,
+  isLoading: false,
+  error
+});
+
+export const showFetchData = id => async dispatch => {
   dispatch(showIsLoading(true));
 
-  return apiClient.getShow(id).then((res) => {
+  try {
+    const apiClient = new ApiClient();
+    const res = await apiClient.getShow(id);
     dispatch(showIsLoading(false));
-    dispatch(showFetchDataSuccess(res.data));
-  });
+    dispatch(showFetchDataSuccess(res));
+  } catch (error) {
+    dispatch(showIsLoading(false));
+    dispatch(showFetchDataError(error));
+  }
 };

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'configs/routes';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "configs/routes";
 
-import withI18N from 'components/hoc/withI18N';
+import withI18N from "components/hoc/withI18N";
 
-import placeholder from 'assets/images/placeholder.png';
+import placeholder from "assets/images/placeholder.png";
 
 const Show = ({ show }) => {
   const image = show.image ? show.image.medium : placeholder;
@@ -33,7 +33,7 @@ const Show = ({ show }) => {
 
 Show.propTypes = {
   config: PropTypes.object,
-  show: PropTypes.object,
+  show: PropTypes.object
 };
 
-export default withI18N(Show, ['show', 'error']);
+export default withI18N(Show, ["show", "error"]);

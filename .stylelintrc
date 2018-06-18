@@ -1,0 +1,15 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-empty-line-before": "always",
+    "at-rule-no-unknown": null,
+    "declaration-colon-newline-after": null,
+    "font-family-name-quotes": "always-unless-keyword",
+    "number-leading-zero": "never",
+    "scss/at-rule-no-unknown": true,
+    "string-quotes": "single"
+  }
+}

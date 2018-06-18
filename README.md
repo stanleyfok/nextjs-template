@@ -1,15 +1,28 @@
-Nextjs Template
-=======
+# Nextjs Template
 
 [Nextjs](https://github.com/zeit/next.js) already provide a very easy way to use react to create a universal app. However, there are still much to setup if you want to put your app to a production environment. I have spent some time myself to come up with a project template which is able to suit my business needs.
 
 This project template is actually a simple universal webapp with 2 screens. I hope it will be a useful example for those who are interested to build your next webapp with Nextjs.
 
-In the following sections, I will explain my design philosophy injected into this project template.
+## Highlights
+
+- a project skeleton on [Nextjs](https://github.com/zeit/next.js/) SSR supported React framework
+- with eslint setup with rules from airbnb-base and react/recommended
+- integrated with express.js
+- use redux architecture
+- use [axios](https://www.npmjs.com/package/axios) for HTTP client
+- use [next-route](https://www.npmjs.com/package/next-routes) for dynamic routes
+- use of scss and bootstrap
+- use of [nprogress](https://www.npmjs.com/package/nprogress) for progress bar
+- i18n support by integrating [i18next](https://www.i18next.com/)
+- consideration of using CDN for hosting static files
+- [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) support
+- a sample dockerfile and docker-compose.yml, which the docker-compose.yml simulates a environment having an application server and a CDN server
 
 ## Getting Started
 
 To run this example, simply do:
+
 ```sh
 npm install
 npm run dev
@@ -19,19 +32,13 @@ Then you will see a simple web app with 2 pages like this:
 
 <img src="https://raw.githubusercontent.com/stanleyfok/nextjs-template/master/assets/images/screenshot.png" width="500" />
 
-## Highlights
+## IDE setup
 
- * a project skeleton on [Nextjs](https://github.com/zeit/next.js/) SSR supported React framework
- * integrated with express.js for nice URL routing
- * use of scss
- * i18n support by integrating [i18next](https://www.i18next.com/)
- * using jest as unit testing framework with examples on component unit testing with snapshots and mocking api client
- * consideration of security on config files
- * consideration of using CDN for hosting static files
- * with eslint setup with rules from airbnb-base and react/recommended
- * with sasslint setup
- * [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) support
- * a sample dockerfile and docker-compose.yml, which the docker-compose.yml simulates a environment having an application server and a CDN server
+VSCode is highly preferred. Please ensure you have installed these extensions:
+
+- Prettier
+- stylelint
+- eslint
 
 ## Useful Commands
 
@@ -45,29 +52,8 @@ npm run start
 #to run the webpack analyzer
 npm run analyze
 
-#to check js and json syntax
-npm run eslint
-
-#to auto fix js and json syntax
-npm run eslint-fix
-
-#to check scss syntax
-npm run sasslint
-
 #to clear cache and .next folder
 npm run cc
-
-#to run all jest test cases
-npm run test
-
-#to run only unit tests
-npm run test-unit
-
-#to run only integration tests
-npm run test-int
-
-#to show test coverage report
-npm run test-coverage
 ```
 
 ## Design Philosophy - Dev Environment
@@ -95,6 +81,7 @@ npm run eslint-fix
 #### SCSS
 
 For scss, [sass-lint](https://www.npmjs.com/package/sass-lint) is used.
+
 ```sh
 #To check scss syntax
 npm run sasslint
@@ -106,7 +93,7 @@ npm run sasslint
 
 Every page in the same project actually shares the same structure. I make good use of some Nextjs features and some custom components to organize the pages:
 
-#### pages/_document.js
+#### pages/\_document.js
 
 This is provided by the Nextjs framework. It defines root skeleton of any page. For example, it contains markup like `<html>`, `<head>`, `<body>`
 
@@ -123,6 +110,7 @@ This components is representing the meta data to be placed in the <head> section
 This is where we define the actual page content. A page needs to include the Meta component and Layout component. The Meta component defines those required meta fields, such as page title and description, while the Layout component describes the look and feel of the page.
 
 Here is how it looks in the render method of a page:
+
 ```js
 render() {
   return (
@@ -139,7 +127,7 @@ render() {
 
 ### 💡 Rule: Error Page has to be customized
 
-Nextjs allows us to define our own error page. The custom error page is located at [/pages/_error.js](https://github.com/stanleyfok/nextjs-template/blob/master/pages/_error.js). It looks very similar to the normal pages as you can also define it's own Meta and Layout.
+Nextjs allows us to define our own error page. The custom error page is located at [/pages/\_error.js](https://github.com/stanleyfok/nextjs-template/blob/master/pages/_error.js). It looks very similar to the normal pages as you can also define it's own Meta and Layout.
 
 ### 💡 Rule: Routes pattern has to be SEO friendly
 
@@ -148,10 +136,11 @@ Nextjs allows us to define our own error page. The custom error page is located 
 `'[http method] [pattern]': '[actual nextjs page path]'`
 
 This is how it actually looks in our example:
+
 ```js
 module.exports = {
-  'GET /': '/index',
-  'GET /shows/(:id)(-*)?': '/show',
+  "GET /": "/index",
+  "GET /shows/(:id)(-*)?": "/show"
 };
 ```
 
@@ -159,8 +148,8 @@ The [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server
 
 #### Related Files
 
- * [configs/routes.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/routes.js)
- * [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js)
+- [configs/routes.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/routes.js)
+- [server.js](https://github.com/stanleyfok/nextjs-template/blob/master/server.js)
 
 ## Design Philosophy - JS
 
@@ -174,10 +163,10 @@ In a universal application, every files will be exposed to the frontend. You can
 
 ```js
 export default {
-  dev: { apiHost: 'http://localhost:3001/' },
-  staging: { apiHost: 'https://www.myinternalsite.com/' },
-  production: { apiHost: 'https://www.mysite.com/' },
-}
+  dev: { apiHost: "http://localhost:3001/" },
+  staging: { apiHost: "https://www.myinternalsite.com/" },
+  production: { apiHost: "https://www.mysite.com/" }
+};
 ```
 
 However, the problem is that this would leak internal information to the public, which maybe potentially a security issue.
@@ -186,8 +175,8 @@ To solve this problem, the babel plugin [transform define](https://www.npmjs.com
 
 #### Related Files
 
- * [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
- * [env.config.js](https://github.com/stanleyfok/nextjs-template/blob/master/env.config.js)
+- [configs/config.js](https://github.com/stanleyfok/nextjs-template/blob/master/configs/config.js)
+- [env.config.js](https://github.com/stanleyfok/nextjs-template/blob/master/env.config.js)
 
 ## Design Philosophy - CSS and other media files
 
@@ -221,6 +210,7 @@ If the page is rendered by server side, the translation should be ready at serve
 By using the library [i18next](https://www.i18next.com/), translation files are stored in JSON format. We should group the translation string, rather than constructing a long translation key
 
 Good:
+
 ```js
 {
   "header": {
@@ -233,6 +223,7 @@ Good:
 ```
 
 Bad:
+
 ```js
 {
   "header_title": "Batman TV Programs",
@@ -269,6 +260,7 @@ The library [enzyme](https://www.npmjs.com/package/enzyme) and [enzyme-to-json](
 ### 💡 Rule: Need to export the undecorated component for every component file to facilitate unit testing
 
 Each react component has to export the undecorated component. For example:
+
 ```js
 export default withI18N(Footer);
 export const undecorated = Footer;
@@ -288,8 +280,8 @@ Reference: https://hackernoon.com/api-testing-with-jest-d1ab74005c0a
 
 It is always a good practice to run the [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to understand how to optimize your app. To learn some optimization skills on Nextjs, please refer to:
 
-* [Lazy Loading Modules](https://learnnextjs.com/excel/lazy-loading-modules)
-* [Lazy Loading Components](https://learnnextjs.com/excel/lazy-loading-components)
+- [Lazy Loading Modules](https://learnnextjs.com/excel/lazy-loading-modules)
+- [Lazy Loading Components](https://learnnextjs.com/excel/lazy-loading-components)
 
 ```sh
 #To start the analyzer
@@ -308,12 +300,6 @@ Docker compose can help you to simulate an environment closer to your production
 
 #### Related Files
 
- * [Dockerfile](https://github.com/stanleyfok/nextjs-template/blob/master/Dockerfile)
- * [.dockerignore](https://github.com/stanleyfok/nextjs-template/blob/master/.dockerignore)
- * [docker-compose.yml](https://github.com/stanleyfok/nextjs-template/blob/master/docker-compose.yml)
-
-## To do
- * error page should not return 200 status code
- * unit test rewrite
- * Add BEM example for CSS
- * implement Redux
+- [Dockerfile](https://github.com/stanleyfok/nextjs-template/blob/master/Dockerfile)
+- [.dockerignore](https://github.com/stanleyfok/nextjs-template/blob/master/.dockerignore)
+- [docker-compose.yml](https://github.com/stanleyfok/nextjs-template/blob/master/docker-compose.yml)

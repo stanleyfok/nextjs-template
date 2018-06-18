@@ -1,27 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
+import React from "react";
+import PropTypes from "prop-types";
+import { bindActionCreators } from "redux";
 
-import withPage from 'components/hoc/withPage';
-import Layout from 'components/layout/Layout';
-import Meta from 'components/layout/Meta';
-import Index from 'components/main/Index';
+import withPage from "components/hoc/withPage";
+import Layout from "components/layout/Layout";
+import Meta from "components/layout/Meta";
+import Index from "components/main/Index";
+import ErrorView from "components/common/ErrorView";
 
-import { showsFetchData } from 'actions/shows';
+import { showsFetchData } from "actions/shows";
 
 class IndexPage extends React.Component {
   static async getInitialProps({ store }) {
-    await store.dispatch(showsFetchData('batman'));
+    await store.dispatch(showsFetchData("batman"));
 
     return {};
   }
 
   render() {
-    const { t, shows } = this.props;
+    const { t, shows, error } = this.props;
+
+    if (error) {
+      return (
+        <Layout>
+          <Meta
+            title={t("error:meta.title")}
+            description={t("error:meta.description")}
+          />
+          <ErrorView message={error.message} />
+        </Layout>
+      );
+    }
 
     return (
       <Layout>
-        <Meta title={t('index:meta.title')} description={t('index:meta.description')} />
+        <Meta
+          title={t("index:meta.title")}
+          description={t("index:meta.description")}
+        />
         <Index shows={shows} />
       </Layout>
     );
@@ -29,27 +45,28 @@ class IndexPage extends React.Component {
 }
 
 IndexPage.propTypes = {
-  isServer: PropTypes.bool,
+  t: PropTypes.func,
   showsFetchData: PropTypes.func,
   shows: PropTypes.array,
-  t: PropTypes.func,
+  error: PropTypes.object
 };
 
-const mapStateToProps = state => ({
-  shows: state.shows,
-  showsIsLoading: state.showsIsLoading,
-});
+const mapStateToProps = state => {
+  return {
+    shows: state.shows.shows,
+    isLoading: state.shows.isLoading,
+    error: state.shows.error
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
-  showsFetchData: bindActionCreators(showsFetchData, dispatch),
+  showsFetchData: bindActionCreators(showsFetchData, dispatch)
 });
 
 export default withPage(IndexPage, {
-  i18n: { namespaces: ['index'] },
+  i18n: { namespaces: ["index", "error"] },
   redux: {
     mapStateToProps,
-    mapDispatchToProps,
-  },
+    mapDispatchToProps
+  }
 });
-
-export const undecorated = IndexPage;

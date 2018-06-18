@@ -1,21 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import withI18N from 'components/hoc/withI18N';
+import withI18N from "components/hoc/withI18N";
 
-const ErrorView = ({ t, statusCode }) => (
+const ErrorView = ({ message }) => (
   <div className="error">
-    <p>
-      {statusCode
-        ? t('error:content.withStatusCode', { statusCode })
-        : t('error:content.withoutStatusCode')}
-    </p>
+    <p>{message}</p>
   </div>
 );
 
 ErrorView.propTypes = {
-  t: PropTypes.func,
-  statusCode: PropTypes.number,
+  message: PropTypes.string
 };
 
-export default withI18N(ErrorView, ['error']);
+export default ErrorView;

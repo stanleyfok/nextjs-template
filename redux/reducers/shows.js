@@ -1,35 +1,32 @@
-const showsHasErrored = (state = false, action) => {
-  switch (action.type) {
-  case 'SHOWS_HAS_ERRORED':
-    return action.hasErrored;
+import serializeError from "serialize-error";
+import {
+  SHOWS_IS_LOADING,
+  SHOWS_FETCH_DATA_SUCCESS,
+  SHOWS_FETCH_DATA_ERROR
+} from "../actions/shows";
 
-  default:
-    return state;
-  }
+const initialState = {
+  isLoading: false,
+  shows: [],
+  error: null
 };
 
-const showsIsLoading = (state = false, action) => {
+const shows = (state = initialState, action) => {
   switch (action.type) {
-  case 'SHOWS_IS_LOADING':
-    return action.isLoading;
-
-  default:
-    return state;
-  }
-};
-
-const shows = (state = [], action) => {
-  switch (action.type) {
-  case 'SHOWS_FETCH_DATA_SUCCESS':
-    return action.shows;
-
-  default:
-    return state;
+    case SHOWS_IS_LOADING:
+      return { ...state, isLoading: action.isLoading };
+    case SHOWS_FETCH_DATA_SUCCESS:
+      return { ...state, shows: action.shows };
+    case SHOWS_FETCH_DATA_ERROR:
+      return {
+        ...state,
+        error: serializeError(action.error)
+      };
+    default:
+      return state;
   }
 };
 
 export default {
-  showsHasErrored,
-  showsIsLoading,
-  shows,
+  shows
 };

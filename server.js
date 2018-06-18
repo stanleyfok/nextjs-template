@@ -2,6 +2,7 @@ const express = require('express');
 const next = require('next');
 const fs = require('fs');
 const path = require('path');
+const compression = require('compression');
 const i18nextMiddleware = require('i18next-express-middleware');
 const i18nextBackend = require('i18next-node-fs-backend');
 const i18n = require('i18next');
@@ -37,7 +38,13 @@ i18n
           const server = express();
 
           // enable middleware for i18next
-          server.use(i18nextMiddleware.handle(i18n)).use(handler);
+          server
+            .use(i18nextMiddleware.handle(i18n))
+            .use(compression())
+            .use(handler);
+
+          // health check, optional, depending on your monitoring setup
+          server.get('/health', (req, res) => res.send('ok'));
 
           server.listen(envConfig.PORT, (err) => {
             if (err) throw err;

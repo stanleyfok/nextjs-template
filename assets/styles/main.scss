@@ -1,10 +1,7 @@
-@import '~nprogress/nprogress';
-@import '~bootstrap/scss/bootstrap';
+@import 'abstracts/variables';
 
-@import 'theme';
+@import 'vendors/bootstrap', 'vendors/nprogress';
 
-// components
-@import './components/Header';
-@import './components/Footer';
+@import './components/Header', './components/Footer';
 
-// pages
+@import './themes/theme';
