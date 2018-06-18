@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import withI18N from 'components/hoc/withI18N';
 
-const Error = ({ t, statusCode }) => (
+const ErrorView = ({ t, statusCode }) => (
   <div className="error">
     <p>
       {statusCode
@@ -13,10 +13,9 @@ const Error = ({ t, statusCode }) => (
   </div>
 );
 
-Error.propTypes = {
+ErrorView.propTypes = {
   t: PropTypes.func,
   statusCode: PropTypes.number,
 };
 
-export default withI18N(Error, ['error']);
-export const undecorated = Error;
+export default withI18N(ErrorView, ['error']);

@@ -5,8 +5,7 @@ import { bindActionCreators } from 'redux';
 import withPage from 'components/hoc/withPage';
 import Layout from 'components/layout/Layout';
 import Meta from 'components/layout/Meta';
-// import Error from 'components/common/Error';
-import Show from 'components/content/Show';
+import Show from 'components/main/Show';
 
 import { showFetchData } from 'actions/show';
 

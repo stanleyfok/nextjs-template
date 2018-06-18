@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import withPage from 'components/hoc/withPage';
 import Layout from 'components/layout/Layout';
 import Meta from 'components/layout/Meta';
-import Error from 'components/common/Error';
+import ErrorView from 'components/common/ErrorView';
 
 class ErrorPage extends React.Component {
   static getInitialProps({ res, err }) {
@@ -19,7 +19,7 @@ class ErrorPage extends React.Component {
     return (
       <Layout>
         <Meta title={t('index:meta.title')} description={t('index:meta.description')} />
-        <Error statusCode={statusCode} />
+        <ErrorView statusCode={statusCode} />
       </Layout>
     );
   }

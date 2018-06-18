@@ -24,4 +24,3 @@ Header.propTypes = {
 };
 
 export default withI18N(Header);
-export const undecorated = Header;

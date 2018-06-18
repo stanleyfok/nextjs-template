@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
+import { Link } from 'configs/routes';
 
 import withI18N from 'components/hoc/withI18N';
 
@@ -22,7 +22,7 @@ const Show = ({ show }) => {
       </div>
       <div className="row text-center">
         <div className="col-md-12">
-          <Link href="/index" as="/">
+          <Link route="index">
             <a className="btn btn-primary">Back</a>
           </Link>
         </div>
@@ -37,4 +37,3 @@ Show.propTypes = {
 };
 
 export default withI18N(Show, ['show', 'error']);
-export const undecorated = Show;

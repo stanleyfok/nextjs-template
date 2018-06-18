@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
-import slug from 'slug';
+import { Link } from 'configs/routes';
 
 import withI18N from 'components/hoc/withI18N';
 
@@ -12,11 +11,7 @@ const Index = ({ t, shows }) => (
     <ul>
       {shows.map(show => (
         <li key={show.show.id}>
-          <Link
-            prefetch
-            href={`/show?id=${show.show.id}`}
-            as={`/shows/${show.show.id}-${slug(show.show.name)}`}
-          >
+          <Link route="show" params={{ id: show.show.id }}>
             <a>
               {show.show.name} {show.show.rating.average ? `(${show.show.rating.average})` : ''}
             </a>
@@ -33,4 +28,3 @@ Index.propTypes = {
 };
 
 export default withI18N(Index, ['index', 'error']);
-export const undecorated = Index;

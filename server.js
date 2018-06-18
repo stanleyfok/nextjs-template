@@ -14,49 +14,43 @@ const dev = envConfig.NODE_ENV === 'dev';
 const localesPath = path.join(__dirname, 'assets', 'locales');
 
 const app = next({ dev });
-const handle = app.getRequestHandler();
+// const handle = app.getRequestHandler();
+const handler = routes.getRequestHandler(app);
 
 // init i18next with serverside settings
 // using i18next-express-middleware
 i18n
   .use(i18nextBackend)
   .use(i18nextMiddleware.LanguageDetector)
-  .init(Object.assign({}, i18nConfig, {
-    preload: ['en'], // preload all langages
-    ns: fs.readdirSync(path.join(localesPath, 'en')).map(file => path.parse(file).name),
-    backend: {
-      loadPath: path.join(localesPath, '{{lng}}/{{ns}}.json'),
-    },
-  }), () => {
-    app.prepare().then(() => {
-      const server = express();
+  .init(
+    Object.assign({}, i18nConfig, {
+      preload: ['en'], // preload all langages
+      ns: fs.readdirSync(path.join(localesPath, 'en')).map(file => path.parse(file).name),
+      backend: {
+        loadPath: path.join(localesPath, '{{lng}}/{{ns}}.json'),
+      },
+    }),
+    () => {
+      app
+        .prepare()
+        .then(() => {
+          const server = express();
 
-      // enable middleware for i18next
-      server.use(i18nextMiddleware.handle(i18n));
+          // enable middleware for i18next
+          server.use(i18nextMiddleware.handle(i18n)).use(handler);
 
-      Object.keys(routes).forEach((key) => {
-        const tokens = key.split(' ');
-        const method = tokens[0].toLowerCase();
-        const pattern = tokens[1];
-        const actualPage = routes[key];
+          server.listen(envConfig.PORT, (err) => {
+            if (err) throw err;
 
-        server[method](pattern, (req, res) => {
-          app.render(req, res, actualPage, req.params);
+            // eslint-disable-next-line no-console
+            console.log(`> Ready on http://localhost:${envConfig.PORT}`);
+          });
+        })
+        .catch((ex) => {
+          // eslint-disable-next-line no-console
+          console.error(ex.stack);
+
+          process.exit(1);
         });
-      });
-
-      server.get('*', (req, res) => handle(req, res));
-
-      server.listen(envConfig.PORT, (err) => {
-        if (err) throw err;
-
-        // eslint-disable-next-line no-console
-        console.log(`> Ready on http://localhost:${envConfig.PORT}`);
-      });
-    }).catch((ex) => {
-      // eslint-disable-next-line no-console
-      console.error(ex.stack);
-
-      process.exit(1);
-    });
-  });
+    },
+  );
