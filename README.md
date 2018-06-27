@@ -11,11 +11,11 @@ This project template is actually a simple universal webapp with 2 screens. I ho
 - integrated with express, with i18n and compression middlewares
 - demonstrate using redux in Next.js
 - use [axios](https://www.npmjs.com/package/axios) for HTTP client
+- error handling for API
 - use [next-route](https://www.npmjs.com/package/next-routes) for dynamic routes
 - use of scss and bootstrap
 - use of [nprogress](https://www.npmjs.com/package/nprogress) for progress bar
 - i18n support by integrating [i18next](https://www.i18next.com/)
-- consideration of using CDN for hosting static files
 - [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) support
 - a sample dockerfile and docker-compose.yml, which the docker-compose.yml simulates a environment having an application server and a CDN server
 
